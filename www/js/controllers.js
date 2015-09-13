@@ -143,16 +143,16 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope) {
-  $scope.totalCompra = 0;
+  $rootScope.totalCompra = 0;
   $rootScope.detalle;
 
   $scope.sumarPrecio = function(precio){
-    $scope.totalCompra = $scope.totalCompra + precio;
+    $rootScope.totalCompra = $rootScope.totalCompra + precio;
   };
 
   $scope.restarPrecio = function(precio){
-    if($scope.totalCompra!=0)
-    $scope.totalCompra = $scope.totalCompra - precio;
+    if($rootScope.totalCompra!=0)
+    $rootScope.totalCompra = $rootScope.totalCompra - precio;
   };
 
   $scope.agregarProducto = function(producto){
