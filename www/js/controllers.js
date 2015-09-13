@@ -76,12 +76,8 @@ angular.module('starter.controllers', ['ngCordova'])
     location: {
       coordinates: new Array()
     },
-    detalle: [
-      {
-        producto: 1,
-        cantidad: 123
-      }
-    ]
+    detalle: new Array(),
+    totalCompra: 0
   };
 
   $scope.datosCompra = angular.copy(datosCompraInit);
@@ -89,7 +85,10 @@ angular.module('starter.controllers', ['ngCordova'])
   $scope.enviarOrdenCompra = function() {
     console.log('DatosCompraCtrl.enviarOrdenCompra');
 
-    $rootScope.orden = {};
+    if ($rootScope.detalle === undefined) {
+      alert('El carro de compras se encuentra vacío.');
+      return;
+    };
 
     var posOptions = {timeout: 10000, enableHighAccuracy: false};
     $cordovaGeolocation.getCurrentPosition(posOptions)
@@ -101,6 +100,9 @@ angular.module('starter.controllers', ['ngCordova'])
         $scope.datosCompra.location.coordinates.push(longitude);
         $scope.datosCompra.location.coordinates.push(latitude);
 
+        $scope.datosCompra.detalle = $rootScope.detalle;
+        $scope.datosCompra.totalCompra = $rootScope.totalCompra;
+
         console.log('DatosCompra :: ', $scope.datosCompra);
 
         // $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
@@ -108,10 +110,15 @@ angular.module('starter.controllers', ['ngCordova'])
           .success(function(response) {
             console.log('Response :: ', response);
             $scope.names = response.records;
+            $scope.datosCompra = angular.copy(datosCompraInit);
+            $rootScope.detalle = new Array();
+            $rootScope.totalCompra = 0;
           })
           .error(function(error) {
             console.log('ERROR ::', error);
             $scope.datosCompra = angular.copy(datosCompraInit);
+            $rootScope.detalle = new Array();
+            $rootScope.totalCompra = 0;
           });
         ;
 
@@ -123,6 +130,8 @@ angular.module('starter.controllers', ['ngCordova'])
 
   $scope.cancelarOrden = function() {
     console.log('DatosCompraCtrl.cancelarOrden');
+    $rootScope.detalle = new Array();
+    $rootScope.totalCompra = 0;
     $state.go('productos');
   }
 
