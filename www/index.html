@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="starter">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
@@ -27,6 +27,7 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
   </head>
+  <body ng-controller="AppCtrl">
   <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <!-- Brand and toggle get grouped for better mobile display -->
@@ -43,7 +44,7 @@
               <li id="launch" data-container="body" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
                 <a href="#"><span class="blue">
                   <!-- <img id="cart-icon-anim" src="images/ico-carrito.png">  -->
-                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">0.00</span> (<span class="qty-number">0</span>) <span class="caret blue"></span>
+                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">{{totalCompra | currency}}</span> (<span class="qty-number">0</span>) <span class="caret blue"></span>
                 </a>
               </li>
 
@@ -65,7 +66,6 @@
           <div style="display: none;"><input type="hidden" name="_sourcePage" value="BQhPUmxH_onW3zUf8aedBiljn6Wy84_s"><input type="hidden" name="__fp" value="gTdkvlfuXTY="></div>
         </form>
       </nav>
-  <body ng-app="starter">
     <ion-nav-view></ion-nav-view>
     <footer>
           <div class="container-fluid">

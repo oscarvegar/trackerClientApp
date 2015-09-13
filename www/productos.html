@@ -1,4 +1,4 @@
-<body ng-controller="AppCtrl">
+<body ng-controller="ProductosCtrl">
     <div class="wrpp-rr">
         <div id="container" class="products">
             <form name="formProductosPromosActionBean" action="./promos_files/promos.html" method="post">
@@ -38,22 +38,22 @@
 
 
 
-                            <!— Detalle de cada producto —>
+                            <!-- Detalle de cada producto -->
                             <div>
                                 <div class="col-md-12">
 
                                     <div class="{{'product-item.item-'+producto.id}}" style="height: 263px;">
-                                    <img class="media-object" src="{{producto.imagen}}">
+                                    <!--<img class="media-object" src="{{producto.imagen}}">-->
                                         <div class="product-qty1" style="width: 263px;">
                                             <div class="less-qty">
-                                                <a href="javascript:resta({{producto.id}},1);"><img src="./promos_files/restar.png">
+                                                <a href="" ng-click="restarPrecio(producto.precio)"><img src="./promos_files/restar.png">
                                                 </a>
                                             </div>
                                             <div class="qty-result">
                                                 <p id="parrafo33">0</p>
                                             </div>
                                             <div class="more-qty">
-                                                <a href="javascript:suma({{product.id}},1);"><img src="./promos_files/agregar.png">
+                                                <a href="" ng-click="sumarPrecio(producto.precio); agregarProducto(producto)"><img src="./promos_files/agregar.png">
                                                 </a>
                                             </div>
                                         </div>

@@ -32,12 +32,12 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   .state('promos', {
     url: "/promos",
     templateUrl: "promos.html",
-    controller: 'AppCtrl'
+    controller: 'ProductosCtrl'
   })
   .state('productos', {
     url: "/productos",
     templateUrl: "productos.html",
-    controller: 'AppCtrl'
+    controller: 'ProductosCtrl'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');

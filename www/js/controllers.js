@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('ProductosCtrl', function($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -39,6 +39,7 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
+
 
   $scope.productosArray = [
 {
@@ -167,4 +168,27 @@ angular.module('starter.controllers', [])
 		.success(function(data){
 		    $scope.solidarios = data;
 		})
+})
+
+
+.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+  $scope.totalCompra = 0;
+  $scope.detalle;
+
+  $scope.sumarPrecio = function(precio){
+    $scope.totalCompra = $scope.totalCompra + precio;
+  };
+
+  $scope.restarPrecio = function(precio){
+    if($scope.totalCompra!=0)
+    $scope.totalCompra = $scope.totalCompra - precio;
+  };
+
+  $scope.agregarProducto = function(producto){
+    if($scope.detalle === undefined){
+      $scope.detalle = [{producto:producto.idProducto, cantidad:1}]
+    }
+    console.log(angular.toJson($scope.detalle))
+  };
+
 });
