@@ -1,0 +1,233 @@
+
+<style type="text/css" media="screen">
+	.well {
+	    min-height: 20px;
+	    padding: 19px;
+	    margin-bottom: 20px;
+	    background-color: #f5f5f5;
+	    border: 1px solid #e3e3e3;
+	    -webkit-border-radius: 4px;
+	    -moz-border-radius: 4px;
+	    border-radius: 4px;
+	    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	}
+	input:required:invalid, input:focus:invalid {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAeVJREFUeNqkU01oE1EQ/mazSTdRmqSxLVSJVKU9RYoHD8WfHr16kh5EFA8eSy6hXrwUPBSKZ6E9V1CU4tGf0DZWDEQrGkhprRDbCvlpavan3ezu+LLSUnADLZnHwHvzmJlvvpkhZkY7IqFNaTuAfPhhP/8Uo87SGSaDsP27hgYM/lUpy6lHdqsAtM+BPfvqKp3ufYKwcgmWCug6oKmrrG3PoaqngWjdd/922hOBs5C/jJA6x7AiUt8VYVUAVQXXShfIqCYRMZO8/N1N+B8H1sOUwivpSUSVCJ2MAjtVwBAIdv+AQkHQqbOgc+fBvorjyQENDcch16/BtkQdAlC4E6jrYHGgGU18Io3gmhzJuwub6/fQJYNi/YBpCifhbDaAPXFvCBVxXbvfbNGFeN8DkjogWAd8DljV3KRutcEAeHMN/HXZ4p9bhncJHCyhNx52R0Kv/XNuQvYBnM+CP7xddXL5KaJw0TMAF8qjnMvegeK/SLHubhpKDKIrJDlvXoMX3y9xcSMZyBQ+tpyk5hzsa2Ns7LGdfWdbL6fZvHn92d7dgROH/730YBLtiZmEdGPkFnhX4kxmjVe2xgPfCtrRd6GHRtEh9zsL8xVe+pwSzj+OtwvletZZ/wLeKD71L+ZeHHWZ/gowABkp7AwwnEjFAAAAAElFTkSuQmCC);
+		background-position: right top;
+		background-repeat: no-repeat;
+		-moz-box-shadow: none;
+	}
+	input:required:valid {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAepJREFUeNrEk79PFEEUx9/uDDd7v/AAQQnEQokmJCRGwc7/QeM/YGVxsZJQYI/EhCChICYmUJigNBSGzobQaI5SaYRw6imne0d2D/bYmZ3dGd+YQKEHYiyc5GUyb3Y+77vfeWNpreFfhvXfAWAAJtbKi7dff1rWK9vPHx3mThP2Iaipk5EzTg8Qmru38H7izmkFHAF4WH1R52654PR0Oamzj2dKxYt/Bbg1OPZuY3d9aU82VGem/5LtnJscLxWzfzRxaWNqWJP0XUadIbSzu5DuvUJpzq7sfYBKsP1GJeLB+PWpt8cCXm4+2+zLXx4guKiLXWA2Nc5ChOuacMEPv20FkT+dIawyenVi5VcAbcigWzXLeNiDRCdwId0LFm5IUMBIBgrp8wOEsFlfeCGm23/zoBZWn9a4C314A1nCoM1OAVccuGyCkPs/P+pIdVIOkG9pIh6YlyqCrwhRKD3GygK9PUBImIQQxRi4b2O+JcCLg8+e8NZiLVEygwCrWpYF0jQJziYU/ho2TUuCPTn8hHcQNuZy1/94sAMOzQHDeqaij7Cd8Dt8CatGhX3iWxgtFW/m29pnUjR7TSQcRCIAVW1FSr6KAVYdi+5Pj8yunviYHq7f72po3Y9dbi7CxzDO1+duzCXH9cEPAQYAhJELY/AqBtwAAAAASUVORK5CYII=);
+		background-position: right top;
+		background-repeat: no-repeat;
+	}
+</style>
+
+<div class="wrpp-rr" ng-controller="DatosCompraCtrl">
+	<div id="container" class="products">
+        <div id="catalogo" class="container well">
+        	<form>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Nombre: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.nombre" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Apellido Paterno: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.ap_pat" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Apellido Materno: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.ap_mat" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Calle: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.direccion.calle" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">No. Exterior: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.direccion.no_ext" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">No. Interior: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="25" name="" value="" ng-model="datosCompra.direccion.no_int">
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Colonia: </label>
+	        		<div class="col-sm-9">
+	        			<input type="text" size="50" name="" value="" ng-model="datosCompra.direccion.colonia" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Código Postal: </label>
+	        		<div class="col-sm-9">
+	        			<input type="number" size="5" name="" value="" ng-model="datosCompra.direccion.cp" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Estado: </label>
+	        		<div class="col-sm-9">
+	        			<select name="estado" id="estado" ng-model="datosCompra.direccion.estado" required>
+							<option value="1">Aguascalientes</option>
+							<option value="2">Baja California</option>
+							<option value="3">Baja California Sur</option>
+							<option value="4">Campeche</option>
+							<option value="5">Chiapas</option>
+							<option value="6">Chihuahua</option>
+							<option value="7">Coahuila</option>
+							<option value="8">Colima</option>
+							<option value="9">Distrito Federal</option>
+							<option value="10">Durango</option>
+							<option value="11">Estado de México</option>
+							<option value="12">Guanajuato</option>
+							<option value="13">Guerrero</option>
+							<option value="14">Hidalgo</option>
+							<option value="15">Jalisco</option>
+							<option value="16">Michoacán</option>
+							<option value="17">Morelos</option>
+							<option value="18">Nayarit</option>
+							<option value="19">Nuevo León</option>
+							<option value="20">Oaxaca</option>
+							<option value="21">Puebla</option>
+							<option value="22">Querétaro</option>
+							<option value="23">Quintana Roo</option>
+							<option value="24">San Luis Potosí</option>
+							<option value="25">Sinaloa</option>
+							<option value="26">Sonora</option>
+							<option value="27">Tabasco</option>
+							<option value="28">Tamaulipas</option>
+							<option value="29">Tlaxcala</option>
+							<option value="30">Veracruz</option>
+							<option value="31">Yucatán</option>
+							<option value="32">Zacatecas</option>
+						</select>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Delegación o Municipio: </label>
+	        		<div class="col-sm-9">
+						<select name="municipios" id="municipios" ng-model="datosCompra.direccion.del_mun" required>
+							<option value="1">Abasolo</option>
+							<option value="2">Agualeguas</option>
+							<option value="3">Los Aldamas</option>
+							<option value="4">Allende</option>
+							<option value="5">Anahuac</option>
+							<option value="6">Apodaca</option>
+							<option value="7">Aramberri</option>
+							<option value="8">Bustamante</option>
+							<option value="9">Cadereyta Jimenez</option>
+							<option value="10">Carmen</option>
+							<option value="11">Cerralvo</option>
+							<option value="12">Cienega de Flores</option>
+							<option value="13">China</option>
+							<option value="14">Dr. Arroyo</option>
+							<option value="15">Dr. Coss</option>
+							<option value="16">Dr. Gonzalez</option>
+							<option value="17">Galeana</option>
+							<option value="18">Garcia</option>
+							<option value="19">San Pedro Garza Garcia</option>
+							<option value="20">Gral. Bravo</option>
+							<option value="21">Gral. Escobedo</option>
+							<option value="22">Gral. Teran</option>
+							<option value="23">Gral. Trevi</option>
+							<option value="24">Gral. Zaragoza</option>
+							<option value="25">Gral. Zuazua</option>
+							<option value="26">Guadalupe</option>
+							<option value="27">Los Herreras</option>
+							<option value="28">Higueras</option>
+							<option value="29">Hualahuises</option>
+							<option value="30">Iturbide</option>
+							<option value="31">Juarez</option>
+							<option value="32">Lampazos de Naranjo</option>
+							<option value="33">Linares</option>
+							<option value="34">Marin</option>
+							<option value="35">Melchor Ocampo</option>
+							<option value="36">Mier y Noriega</option>
+							<option value="37">Mina</option>
+							<option value="38">Montemorelos</option>
+							<option value="39">Monterrey</option>
+							<option value="40">Paras</option>
+							<option value="41">Pesqueria</option>
+							<option value="42">Los Ramones</option>
+							<option value="43">Rayones</option>
+							<option value="44">Sabinas Hidalgo</option>
+							<option value="45">Salinas Victoria</option>
+							<option value="46">San Nicolas de los Garza</option>
+							<option value="47">Hidalgo</option>
+							<option value="48">Santa Catarina</option>
+							<option value="49">Santiago</option>
+							<option value="50">Vallecillo</option>
+							<option value="51">Villaldama</option>
+						</select>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">País: </label>
+	        		<div class="col-sm-9">
+	        			<select name="cp" id="selEstado" ng-model="datosCompra.direccion.pais" required>
+	        				<option value="52">México</option>
+	        			</select>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Teléfono: </label>
+	        		<div class="col-sm-9">
+	        			<input type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.tel" required>
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Teléfono Móvil: </label>
+	        		<div class="col-sm-9">
+	        			<input type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.movil">
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Nextel: </label>
+	        		<div class="col-sm-9">
+	        			<input type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.nextel">
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+	        		<label class="control-label col-sm-3">Correo Electrónico: </label>
+	        		<div class="col-sm-9">
+	        			<input type="email" size="25" name="" value="" ng-model="datosCompra.contacto.email">
+	        		</div>
+	        	</div>
+	        	<br><br>
+        		<div class="form-group">
+		        	<button class="btn btn-info" ng-click="regresar()">REGRESAR</button>
+		        	<button class="btn btn-danger" ng-click="cancelarOrden()">CANCELAR ORDEN</button>
+		        	<button class="btn btn-success" ng-click="enviarOrdenCompra()">ENVIAR ORDEN</button>
+	        	</div>
+        	</form>
+        </div>
+	</div>
+</div>
