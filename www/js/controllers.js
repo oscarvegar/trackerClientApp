@@ -52,7 +52,86 @@ angular.module('starter.controllers', [])
 
 
 })
+.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state) {
+  var datosCompraInit = {
+    nombre: '',
+    ap_pat: '',
+    ap_mat: '',
+    direccion: {
+      calle: '',
+      no_ext: '',
+      no_int: '',
+      colonia: '',
+      cp: '',
+      del_mun: '',
+      estado: '',
+      pais: ''
+    },
+    contacto: {
+      tel: '',
+      movil: '',
+      nextel: '',
+      email: ''
+    },
+    location: {
+      coordinates: new Array()
+    },
+    detalle: [
+      {
+        producto: 1,
+        cantidad: 123
+      }
+    ]
+  };
 
+  $scope.datosCompra = angular.copy(datosCompraInit);
+
+  $scope.enviarOrdenCompra = function() {
+    console.log('DatosCompraCtrl.enviarOrdenCompra');
+
+    $rootScope.orden = {};
+
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    $cordovaGeolocation.getCurrentPosition(posOptions)
+      .then(function (position) {
+        var latitude = position.coords.latitude
+        var longitude = position.coords.longitude
+
+        $scope.datosCompra.location.coordinates = new Array();
+        $scope.datosCompra.location.coordinates.push(longitude);
+        $scope.datosCompra.location.coordinates.push(latitude);
+
+        console.log('DatosCompra :: ', $scope.datosCompra);
+
+        // $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
+        $http.post('http://yoplanner.com:1337/api/orden/place', $scope.datosCompra)
+          .success(function(response) {
+            console.log('Response :: ', response);
+            $scope.names = response.records;
+          })
+          .error(function(error) {
+            console.log('ERROR ::', error);
+            $scope.datosCompra = angular.copy(datosCompraInit);
+          });
+        ;
+
+      }, function(err) {
+        // error
+      });
+
+  }
+
+  $scope.cancelarOrden = function() {
+    console.log('DatosCompraCtrl.cancelarOrden');
+    $state.go('productos');
+  }
+
+  $scope.regresar = function() {
+    console.log('DatosCompraCtrl.regresar');
+    $state.go('comprar');
+  }
+
+})
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
   $scope.totalCompra = 0;
