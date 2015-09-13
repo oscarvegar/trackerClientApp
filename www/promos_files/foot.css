@@ -1,0 +1,108 @@
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 12px;
+    z-index: 3000;
+    text-transform: uppercase;
+    background-color: #2e2e2e;
+}
+/*footer{
+    color: #fff;
+    position: relative;
+    z-index: 3000;
+    width: 100%;
+    height: 70px;
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #2e2e2e;
+}*/
+.vertical-cnt{
+    height: 70px;
+    display: block;
+}
+.vertical-slv{
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+footer a:link,
+footer a:visited,
+footer a:hover,
+footer a:active{
+    color: #fff;
+}
+.lower{
+    text-transform: none;
+}
+.telephone{
+    text-align: left;
+}
+.bold{
+    font-weight: bold;
+}
+.link-row{
+    padding-left: 0;
+}
+.link-row li{
+    display: inline-block;
+}
+.notice{
+    text-align: right;
+    font-size: 10px;
+}
+.small-sec{
+    float: left;
+    width: 20%;
+}
+.blue{
+    color: #46c2eb;
+}
+@media (min-width: 992px) and (max-width: 1515px){
+    .notice{
+        font-size: 10px;
+    }
+}
+@media (max-width: 767px){
+    .telephone{
+        text-align: center;
+    }
+    footer{
+        height: inherit;
+    }
+    .link-row{
+        padding-left: 0;
+    }
+    .link-row li:not(.no-split){
+        display: block;
+        padding-right: 0px;
+        border-right: none;
+    }
+    .no-split{
+        display: inline-block;
+    }
+    .notice{
+        text-align: center;
+    }
+
+
+}
+
+
+/*
+* === ESTILOS MODELO ===
+*/
+@media (max-width:639px){
+	#auth{width:100%;}
+	#splash-logo{width:80%; margin-bottom:10px;}
+}
+
+@media (max-width:413px){
+	#auth{width:100%;}
+	#auth p{font-size:10px;}
+	#splash-logo{width:150px; margin-bottom:10px;}
+
+}

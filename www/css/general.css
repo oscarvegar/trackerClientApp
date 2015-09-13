@@ -1,0 +1,1872 @@
+@import url('reset.css');
+@import url('fonts.css');
+/* =============================================================================
+   HTML5 display
+   ========================================================================== */
+select option{
+    color: #000 !important;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+audio, canvas, video {
+	display: inline-block;
+ *display: inline;
+ *zoom: 1;
+}
+audio:not([controls]) {
+	display: none;
+}
+[hidden] {
+ display: none;
+}
+.clear {
+	float: none;
+	clear: both;
+}
+body {
+	background: #2e2e2e;
+	padding-top: 90px;
+}
+#lineaSuperior {
+	width: 100%;
+	height: 5px;
+	background: #0092fc top center;
+}
+#container {
+	width: 980px;
+	margin: 0 auto;
+	position: relative;
+	min-height:600px;
+}
+#container header {
+	margin: 20px;
+}
+#container header a#logo {
+	display: block;
+	width: 245px;
+	height: 82px;
+}
+#container header #headerDown {
+	overflow: hidden;
+}
+#container header h1 {
+	float: left;
+	color: white;
+	font-family: 'gotham_mediumregular';
+	font-size: 25px;
+	text-transform: uppercase;
+	margin-top: 20px;
+	margin-left: 30px;
+}
+nav#menu {
+	position: absolute;
+	top: -20px;
+	right: 20px;
+}
+#hielos {
+	width: 100%;
+	height: 305px;
+	background: url(../images/bg_hielos.png) center;
+	position: absolute;
+	bottom: 0px;
+}
+.errors {
+	color: #f00;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	text-align: center;
+}
+/* =============================================================================
+   footer
+   ========================================================================== */
+
+/* footer {
+	position: fixed;
+	width: 100%;
+	height: 50px;
+	background: url(../images/bg_footer.png);
+	bottom: 0px;
+}
+#footContainer {
+	width: 980px;
+	margin: 0 auto;
+}
+#footLeft {
+	float: left;
+	margin-left: 20px;
+}
+#footLeft p {
+	display: inline;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	text-transform: uppercase;
+	height: 20px;
+	line-height: 30px;
+}
+#footRight {
+	float: right;
+	margin-right: 20px;
+}
+#footRight a {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	height: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+	margin-right: 5px;
+}
+#footRight span {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	height: 30px;
+	line-height: 30px;
+	text-transform: uppercase;
+}
+#footRight p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	height: 20px;
+	line-height: 7px;
+	margin-left: 5px;
+} */
+/* =============================================================================
+   Index - age verification
+   ========================================================================== */
+
+#container.index {
+	text-align: center;
+	height:auto;
+	padding-bottom:100px;
+}
+#container.index img#logoIndex {
+	margin-top: 125px;
+	margin-bottom: 60px;
+}
+#container.index h1 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+#container.index h2 {
+	color: #ddd;
+	font-family: 'gotham_boldregular';
+	font-size: 18px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+
+#container.index a.btnOption {
+	display: inline-block;
+	margin: 20px 20px 10px 20px;
+}
+#container.index #politicas {
+	margin: 20px;
+	margin-top: 80px;
+}
+#container.index #politicas a {
+	color: #092c74;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	text-transform: uppercase;
+}
+#container.index #politicas span {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 11px;
+	text-transform: uppercase;
+}
+/* =============================================================================
+   codigo postal
+   ========================================================================== */
+
+#container.codigoPostal {
+	text-align: center;
+}
+#container.codigoPostal img#logoIndex {
+	margin-top: 70px;
+	margin-bottom: 75px;
+}
+#container.codigoPostal form label {
+	display: block;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+#container.codigoPostal form #inputCP {
+	display: block;
+	width: 204px;
+	height: 29px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0px 10px;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+	background: url(../images/bg_input_cp.png);
+	border: none;
+}
+#container.codigoPostal form #submitCP {
+	width: 130px;
+	height: 32px;
+	text-indent: -999999px;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	margin-bottom: 10px;
+	background: url(../images/btn_submit_cp.png);
+	border: none;
+	cursor: pointer;
+}
+/* =============================================================================
+   selecciona estado
+   ========================================================================== */
+
+#container.estado {
+	text-align: center;
+}
+#container.estado img#logoIndex {
+	margin-top: 70px;
+	margin-bottom: 75px;
+}
+
+#container.estado form {
+	padding-top:320px;
+	padding-bottom:100px;
+}
+
+#container.estado form label {
+	display: block;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	line-height:14px;
+}
+#container.estado form #inputCP {
+	display: block;
+	width: 204px;
+	height: 29px;
+	margin: 0 auto;
+	text-align: center;
+	padding: 0px 10px;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+	background: url(../images/bg_input_cp.png);
+	border: none;
+}
+#container.estado form #submitCP {
+	width: 130px;
+	height: 32px;
+	text-indent: -999999px;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	margin-bottom: 10px;
+	background: url(../images/btn_submit_cp.png);
+	border: none;
+	cursor: pointer;
+}
+/* =============================================================================
+   home
+   ========================================================================== */
+
+#container.home #sliderContainer {
+	position: relative;
+	width: 980px;
+	height: 344px;
+	background: url(../images/bg_slider.png);
+	padding: 22px 0 px;
+	overflow: hidden;
+}
+#container.home #sliderContainer .arrows {
+	position: absolute;
+	top: 130px;
+	z-index: 20;
+	cursor: pointer;
+}
+#container.home #sliderContainer #arrowLeft {
+	left: 30px;
+}
+#container.home #sliderContainer #arrowRight {
+	right: 30px;
+}
+#container.home #sliderContainer #sliderWrapper {
+	position: absolute;
+	width: 99999px;
+	height: 300px;
+	top: 22px;
+	left: -980px;
+	z-index: 10;
+}
+#container.home #sliderContainer #sliderWrapper .bannerSlide {
+	float: left;
+}
+#container.home #sliderContainer #sliderWrapper2 {
+	position: absolute;
+	width: 99999px;
+	height: 300px;
+	top: 22px;
+	left: -980px;
+	z-index: 10;
+}
+#container.home #sliderContainer #sliderWrapper .bannerSlide2 {
+	float: left;
+}
+#container.home #bottomContainer {
+	height: 200px;
+	margin-bottom: 50px;
+}
+#container.home #bottomContainer #dercargaApp {
+	float: left;
+	width: 225px;
+	text-align: center;
+}
+#container.home #bottomContainer #dercargaApp #imgDescargaApp {
+	margin-bottom: 10px;
+}
+#container.home #bottomContainer #dercargaApp a {
+	display: block;
+	height: 33px;
+	float: left;
+}
+#container.home #bottomContainer #dercargaApp a#btnAppleStore {
+	margin-left: 10px;
+}
+#container.home #bottomContainer #dercargaApp a#btnGooglePlay {
+	margin-left: 12px;
+}
+#container.home #bottomContainer #pasos {
+	float: left;
+	width: auto;
+	height: 181px;
+	margin-left: 125px;
+	margin-top: 19px;
+}
+#container.home #bottomContainer #realizaCompra {
+	float: right;
+	width: auto;
+	text-align: center;
+	margin-right: 10px;
+	margin-top: 85px;
+}
+#container.home #bottomContainer #realizaCompra a {
+	display: block;
+}
+#bottomBg {
+	width: 100%;
+	height: 47px;
+	background: url(../images/bg_home_bottom.png);
+}
+#bottomBg2 {
+	position:fixed;
+	bottom:50px;
+	width: 100%;
+	height: 47px;
+	background: url(../images/bg_home_bottom.png);
+}
+
+/* =============================================================================
+   products
+   ========================================================================== */
+/*
+#container.products header #headerDown {
+	width:100%;
+	height:45px;
+}
+*/
+#container.products header #headerDown nav#menuProducts {
+	float: right;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+#container.products header #headerDown nav#menuProducts a {
+	display: block;
+	height:18px;
+	padding:0px 10px;
+	color:#fff;
+	font-family: 'gotham_mediumregular';
+	text-decoration:none;
+	text-transform:uppercase;
+	line-height:18px;
+	border:2px solid #fff;
+	border-radius:7px;
+	font-size:11px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom:5px;
+}
+
+#container.products header #headerDown nav#menuProducts a.active {
+	color:#0290ff;
+	background:#fff;
+}
+
+#container.products #catalogo {
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+#container.products #catalogo .product {
+	width: 484px;
+	height: 127px;
+	background: url(../images/bg_product.png) no-repeat center top;
+	float: left;
+	margin: 3px;
+}
+#container.products #catalogo .product .productImg {
+	float: left;
+	width: 110px;
+	height: 110px;
+	text-align: center;
+	margin: 10px;
+}
+#container.products #catalogo .product .productImg span {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+#container.products #catalogo .product .productImg img {
+	vertical-align: middle;
+}
+#container.products #catalogo .product .descrProducts {
+	float: left;
+	width: 210px;
+	margin: 5px;
+	text-transform: uppercase;
+}
+#container.products #catalogo .product .descrProducts h1 {
+	color: #0290ff;
+	font-family: 'gotham_boldregular';
+	font-size: 20px;
+	margin: 10px 5px;
+}
+#container.products #catalogo .product .descrProducts h2 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	margin: 5px;
+}
+#container.products #catalogo .product .descrProducts p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 9px;
+	margin: 10px 5px;
+}
+#container.products #catalogo .product .cantProduct {
+	float: left;
+	width: 110px;
+	margin: 10px;
+}
+#container.products #catalogo .product .cantProduct p {
+	float: left;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 40px;
+	line-height: 98px;
+}
+#container.products #catalogo .product .cantProduct a {
+	display: block;
+	float: left;
+	width: 13px;
+	height: 20px;
+	margin: 40px 6px;
+}
+#container.products #miPedido {
+	position: fixed;
+	right: -239px;/*-255*/
+	top: 25%;
+}
+#container.products #miPedido #btnMiPedido {
+	position: absolute;
+	top: 15%;
+	left: -36px;/*-52*/
+	cursor: pointer;
+}
+#container.products #miPedido #contMiPedido {
+	float: left;
+	width: 240px;
+	height: auto;
+	min-height: 200px;
+	background: url(../images/bg_cont_mi_pedido.png);
+	padding: 20px 0px 20px 15px;
+}
+#container.products #miPedido #contMiPedido .descProductMiPedido {
+	overflow: hidden;
+	margin-bottom: 18px;
+}
+#container.products #miPedido #contMiPedido .descProductMiPedido .descMiPedido {
+	float: left;
+	width: 135px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+}
+#container.products #miPedido #contMiPedido .descProductMiPedido .descMiPedido p {
+	margin-bottom: 2px;
+}
+#container.products #miPedido #contMiPedido .descProductMiPedido .cantMiPedido {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 22px;
+	float: left;
+	line-height: 26px;
+	text-align: center;
+}
+#container.products #miPedido #contMiPedido .descProductMiPedido .priceMiPedido {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	float: left;
+	line-height: 26px;
+}
+#container.products #miPedido #contMiPedido #precioTotal {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	text-align: center;
+	margin-bottom: 20px;
+}
+#container.products #miPedido #contMiPedido #precioTotal h1 {
+	font-size: 28px;
+}
+#container.products #miPedido #contMiPedido #precioTotal h2 {
+	font-size: 43px;
+}
+/*#container.products #miPedido #contMiPedido #btnContinuar {
+	margin-left:40px;
+}*/
+
+#container.products #miPedido #contMiPedido #btnContinuar {
+	width: 130px;
+	height: 32px;
+	margin-left: 40px;/*text-indent:-999999px;
+	font-family: 'gotham_boldregular';
+	font-size:22px;
+	margin-bottom:10px;
+	background:url(../images/btn_submit_cp.png);
+	border:none;
+	cursor:pointer;*/
+}
+/* =============================================================================
+   Datos de compra
+   ========================================================================== */
+
+#container.datosCompra #selectCalendar {
+	width: 210px;
+	height: 350px;
+	background: url(../images/bg_gradient_small.png) no-repeat top center;
+	text-align: center;
+	float: left;
+	margin-left: 65px;
+	margin-top: 50px;
+}
+#container.datosCompra #selectCalendar #logoCalendar {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+#container.datosCompra #selectCalendar .checkCalendar {
+	position: relative;
+	width: 183px;
+	height: 32px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#container.datosCompra #selectCalendar #inmediato {
+	background: url(../images/btn_inmediato.png);
+}
+#container.datosCompra #selectCalendar #programada {
+	background: url(../images/btn_programada.png);
+}
+#container.datosCompra #selectCalendar .checkCalendar label {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: block;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	background: url(../images/btn_checkbox.png);
+}
+#container.datosCompra #selectCalendar .checkCalendar label img {
+	margin-top: 3px;
+	margin-left: 1px;
+	display: none;
+}
+#container.datosCompra #selectCalendar .checkCalendar input {
+	display: none;
+}
+#container.datosCompra #selectCalendar #fechaHora label {
+	display: inline-block;
+	width: 160px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 15px;
+}
+#container.datosCompra #selectCalendar #fechaHora {
+	display: none;
+}
+#container.datosCompra #selectCalendar #fechaHora input {
+	display: inline-block;
+	width: 120px;
+	color: #fff;
+	padding: 0px 5px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	text-transform: uppercase;
+	background: url(../images/bg_input_calendar.png) no-repeat center bottom;
+	text-align: center;
+}
+#container.datosCompra #selectCalendar #fechaHora #iconCalendar {
+	margin-left: 4px;
+	margin-bottom: -3px;
+}
+#container.datosCompra #selectCalendar label#idFechaEntrega {
+	display: block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-top: 14px;
+	margin-bottom: 19px;
+}
+#container.datosCompra #selectAddress .checkCalendar {
+	position: relative;
+	width: 213px;
+	height: 32px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#container.datosCompra #selectAddress #direccionExistente {
+	background: url(../images/checkDireccionExistente.html);
+}
+#container.datosCompra #selectAddress .checkCalendar label {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: block;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	background: url(../images/btn_checkbox.png);
+}
+#container.datosCompra #selectAddress {
+	width: 370px;
+	height: 360px;
+	background: url(../images/bg_gradient_med.png) no-repeat top center;
+	text-align: center;
+	float: left;
+	margin-left: 30px;
+}
+#container.datosCompra #selectAddress #logoLocal {
+	margin-top: 15px;
+	margin-bottom: 14px;
+}
+#container.datosCompra .cmf-skinned-select {
+	margin-left: 80px;
+	margin-bottom: 20px;
+}
+#container.datosCompra #selectAddress label {
+	display: block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-top: 14px;
+	margin-bottom: 19px;
+}
+#container.datosCompra #selectAddress select {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 30px;
+	text-align: center;
+	width: 200px;
+	height: 30px;
+	border: none;
+}
+#container.datosCompra #selectAddress option {
+	color: #000;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 30px;
+	border: none;
+}
+#container.datosCompra #selectAddress #customSelect {
+	width: 200px;
+	height: 30px;
+	margin: 0 auto;
+	display: none;
+}
+#container.datosCompra #selectAddress #customSelect #selectItem {
+	width: 200px;
+	height: 30px;
+	background: url(../images/bg_select_item.png) no-repeat center bottom;
+}
+#container.datosCompra #selectAddress #customSelect #selectItem .optItem {
+}
+#container.datosCompra #selectAddress #customSelect #selectItem .optItem p {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	text-transform: uppercase;
+	line-height: 30px;
+	cursor: default;
+}
+#container.datosCompra #selectAddress #btnIngresaDireccion {
+	display: block;
+	margin-top: 20px;
+}
+#container.datosCompra #selectPago {
+	width: 210px;
+	height: 350px;
+	background: url(../images/bg_gradient_small.png) no-repeat top center;
+	text-align: center;
+	float: left;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+#container.datosCompra #selectPago #logoPago {
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+#container.datosCompra #selectPago label#selectPagoLabel {
+	display: block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	width: 165px;
+	margin: 0 auto;
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-top: 15px;
+}
+#container.datosCompra #selectPago .checkPago {
+	position: relative;
+	width: 183px;
+	height: 32px;
+	margin-top: 15px;
+	margin-left: 15px;
+}
+#container.datosCompra #selectPago #credito {
+	background: url(../images/btn_tarjeta_credito.png);
+}
+#container.datosCompra #selectPago #efectivo {
+	background: url(../images/btn_efectivo.png);
+}
+#container.datosCompra #selectPago .checkPago label {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: block;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	background: url(../images/btn_checkbox.png);
+}
+#container.datosCompra #selectPago .checkPago label img {
+	margin-top: 3px;
+	margin-left: 1px;
+	display: none;
+}
+#container.datosCompra #selectPago .checkPago input {
+	display: none;
+}
+#container.datosCompra #selectPago #cambio label {
+	display: inline-block;
+	width: 160px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 15px;
+}
+#container.datosCompra #selectPago #pagoTarjeta label {
+	display: inline-block;
+	width: 160px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin: 15px;
+}
+#container.datosCompra #selectPago #cambio {
+	display: none;
+}
+#container.datosCompra #selectPago #cambio input {
+	display: inline-block;
+	width: 120px;
+	color: #fff;
+	padding: 0px 5px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	text-transform: uppercase;
+	background: url(../images/bg_input_calendar.png) no-repeat center bottom;
+	text-align: center;
+}
+#container.datosCompra #formaPagoSubmit {
+	display: block;
+	width: 166px;
+	height: 34px;
+	background: url(../images/btn_continuar.png);
+	margin: 0 auto;
+	border: none;
+	cursor: pointer;
+	text-indent: -99999px;
+}
+.ui-timepicker-list li {
+	font-family: 'gotham_mediumregular';
+	font-size: 16px !important;
+	text-align: right;
+}
+.ui-datepicker {
+	font-size: 14px !important;
+}
+/* boton direccion existente */
+
+#container.datosCompra #selectAddress .checkDir {
+	position: relative;
+	width: 196px;
+	height: 32px;
+	margin: 0 auto;
+	margin-top: 15px;
+}
+#container.datosCompra #selectAddress #dirDisponible {
+	background: url(../images/btn_dir_existente.png);
+}
+#container.datosCompra #selectAddress .checkDir label {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	display: block;
+	width: 17px;
+	height: 17px;
+	cursor: pointer;
+	background: url(../images/btn_checkbox.png);
+	margin-top: 0px;
+	line-height: 20px;
+}
+#container.datosCompra #selectAddress .checkDir input {
+	display: none;
+}
+#container.datosCompra #selectAddress #selectWrapper {
+	height: 45px;
+}
+#container.datosCompra #selectAddress #selectCustom {
+	display: none;
+}
+#container.datosCompra #selectAddress #dirDisponible label img {
+	display: none;
+}
+/* =============================================================================
+   Login
+   ========================================================================== */
+
+#container.login #loginContent {
+	width: 930px;
+	height: auto;
+	min-height: 420px;
+	background: url(../images/bg_gradient_big.png) no-repeat;
+	text-align: center;
+	margin-bottom: 140px;
+}
+#container.login #loginContent #btnFacebook {
+	display: inline-block;
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+#container.login #loginContent form label {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	display: block;
+	text-transform: uppercase;
+}
+#container.login #loginContent form input.inputLogin {
+	display: block;
+	width: 334px;
+	height: 30px;
+	margin: 0 auto;
+	background: url(../images/bg_input_login.png) no-repeat center bottom;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	display: block;
+	/*text-transform: uppercase;*/
+	line-height: 30px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#container.login #loginContent form input#inputPass {
+	text-transform: none;
+}
+#container.login #loginContent form a#btnRecuperar {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#container.login #loginContent form input#btnLogin {
+	display: block;
+	width: 159px;
+	height: 32px;
+	margin: 0 auto;
+	background: url(../images/btn_ingresar.png);
+	border: none;
+	text-indent: -99999px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+#container.login #loginContent p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+	margin-bottom: 30px;
+}
+/* =============================================================================
+   Recovery
+   ========================================================================== */
+
+#container.recovery #recoveryContent {
+	width: 930px;
+	height: auto;
+	min-height: 555px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat;
+	margin-bottom: 40px;
+	padding-top: 45px;
+	text-align: center;
+}
+#container.recovery #recoveryContent form label {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	display: block;
+	text-transform: uppercase;
+}
+#container.recovery #recoveryContent form .inputRecovery {
+	display: block;
+	width: 334px;
+	height: 30px;
+	margin: 0 auto;
+	background: url(../images/bg_input_login.png) no-repeat center bottom;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	display: block;
+	/*text-transform: uppercase;*/
+	line-height: 30px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+#container.recovery #recoveryContent form input#submitRecovery {
+	display: block;
+	width: 199px;
+	height: 32px;
+	margin: 0 auto;
+	background: url(../images/btn_enviar_contra.png);
+	border: none;
+	text-indent: -99999px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	cursor: pointer;
+}
+#container.recovery #recoveryContent p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+}
+/* =============================================================================
+   Registro
+   ========================================================================== */
+
+
+#container.registro #registroContent {
+	width: 940px;
+	height: auto;
+	min-height: 600px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat top left;
+	margin-bottom: 50px;
+}
+#container.registro #registroContent form {
+	overflow: hidden;
+	padding-top: 50px;
+	margin-left: 30px;
+}
+#container.registro #registroContent form label {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#container.registro #registroContent form label.bigLabel {
+	width: 378px;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form label.medLabel {
+	width: 181px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form label.smallLabel {
+	width: 106px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form input {
+	display: block;
+	height: 30px;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	/*text-transform: uppercase;*/
+	line-height: 30px;
+	margin-bottom: 15px;
+}
+#container.registro #registroContent form input.big {
+	width: 378px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form input.med {
+	width: 181px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 15px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form input.small {
+	width: 106px;
+	background: url(../images/bg_forma_big.png) no-repeat left bottom;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.registro #registroContent form p {
+	width: 50px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+.float_left {
+	float: left;
+}
+
+.float_center {
+	float: center;
+}
+div.cmf-skinned-select {
+	color: #fff !important;
+	font-family: 'gotham_boldregular' !important;
+	font-size: 16px !important;
+	height: 30px !important;
+	float: left !important;
+	min-width: 64px !important;
+	line-height: 30px !important;
+	text-align: center !important;
+	background: url(../images/btn_select.png) no-repeat right!important;
+	margin-right: 20px !important;
+	margin-top: 12px !important;
+}
+div.cmf-skinned-text {
+	width: 100% !important;
+	height: 100% !important;
+	background: url(../images/bg_forma_big.png) no-repeat bottom;
+	text-transform: uppercase !important;
+}
+#container.registro #registroContent form select {
+	text-transform: uppercase !important;
+}
+#container.registro #registroContent form select#dia {
+	width: 122px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	float: left;
+}
+#container.registro #registroContent form select#mes {
+	width: 141px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.registro #registroContent form select#anio {
+	width: 74px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.registro #registroContent form select#colonia {
+	width: 378px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.registro #registroContent form textarea {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 14px;
+	width: 825px;
+	height: 50px;
+	margin-top: 15px;
+	background: url(../images/bg_textarea.png) no-repeat bottom center;
+	resize: none;
+	overflow: auto;
+}
+#container.registro #registroContent form #alerta {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo.png);
+	text-align: center;
+}
+#container.registro #registroContent form #submitRegistro {
+	width: 159px;
+	height: 32px;
+	margin: 0 auto;
+	background: url(../images/btn_enviar.png) no-repeat;
+	border: none;
+	margin-top: 20px;
+	text-indent: -99999px;
+	margin-bottom: 20px;
+	cursor: pointer;
+}
+.error {
+	color: #e20303 !important;
+}
+/* =============================================================================
+   Perfil
+   ========================================================================== */
+
+
+#container.perfil #perfilContent {
+	width: 940px;
+	height: auto;
+	min-height: 600px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat top left;
+	margin-bottom: 50px;
+}
+#container.perfil #perfilContent form {
+	overflow: hidden;
+	padding-top: 50px;
+	margin-left: 30px;
+}
+#container.perfil #perfilContent form label {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#container.perfil #perfilContent form label.bigLabel {
+	width: 378px;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form label.medLabel {
+	width: 181px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form label.smallLabel {
+	width: 106px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form input {
+	display: block;
+	height: 30px;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	/*text-transform: uppercase;*/
+	line-height: 30px;
+	margin-bottom: 15px;
+}
+#container.perfil #perfilContent form input.big {
+	width: 378px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form input.med {
+	width: 181px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 15px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form input.small {
+	width: 106px;
+	background: url(../images/bg_forma_big.png) no-repeat left bottom;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.perfil #perfilContent form p {
+	width: 50px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+.float_left {
+	float: left;
+}
+div.cmf-skinned-select {
+	color: #fff !important;
+	font-family: 'gotham_boldregular' !important;
+	font-size: 16px !important;
+	height: 30px !important;
+	float: left !important;
+	min-width: 64px !important;
+	line-height: 30px !important;
+	text-align: center !important;
+	background: url(../images/btn_select.png) no-repeat right!important;
+	margin-right: 20px !important;
+	margin-top: 12px !important;
+}
+div.cmf-skinned-text {
+	width: 100% !important;
+	height: 100% !important;
+	background: url(../images/bg_forma_big.png) no-repeat bottom;
+	text-transform: uppercase !important;
+}
+#container.perfil #perfilContent form select {
+	text-transform: uppercase !important;
+}
+#container.perfil #perfilContent form select#dia {
+	width: 122px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	float: left;
+}
+#container.perfil #perfilContent form select#mes {
+	width: 141px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.perfil #perfilContent form select#anio {
+	width: 74px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.perfil #perfilContent form select#colonia {
+	width: 378px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.perfil #perfilContent form textarea {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 14px;
+	width: 825px;
+	height: 50px;
+	margin-top: 15px;
+	background: url(../images/bg_textarea.png) no-repeat bottom center;
+	resize: none;
+	overflow: auto;
+}
+#container.perfil #perfilContent form #alerta {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo.png);
+	text-align: center;
+}
+#container.perfil #perfilContent form #botonesPerfil {
+	width: 330px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#container.perfil #perfilContent form #botonesPerfil #btnCancelar {
+	display: block;
+	float: left;
+}
+#container.perfil #perfilContent form #botonesPerfil #submitPerfil {
+	width: 159px;
+	height: 32px;
+	background: url(../images/btn_guardar.png) no-repeat;
+	border: none;
+	text-indent: -99999px;
+	float: right;
+	cursor: pointer;
+}
+/* =============================================================================
+   Direccion
+   ========================================================================== */
+
+
+#container.direccion #direccionContent {
+	width: 940px;
+	height: auto;
+	min-height: 600px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat top left;
+	margin-bottom: 50px;
+}
+#container.direccion #direccionContent form {
+	overflow: hidden;
+	padding-top: 50px;
+	margin-left: 30px;
+}
+#container.direccion #direccionContent form label {
+	display: inline-block;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	text-transform: uppercase;
+}
+#container.direccion #direccionContent form label.bigLabel {
+	width: 378px;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form label.medLabel {
+	width: 181px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form label.smallLabel {
+	width: 106px;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form input {
+	display: block;
+	height: 30px;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	/*text-transform: uppercase;*/
+	line-height: 30px;
+	margin-bottom: 15px;
+}
+#container.direccion #direccionContent form input.big {
+	width: 378px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 70px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form input.med {
+	width: 181px;
+	background: url(../images/bg_forma_big.png) no-repeat center bottom;
+	margin-right: 15px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form input.small {
+	width: 106px;
+	background: url(../images/bg_forma_big.png) no-repeat left bottom;
+	margin-right: 10px;
+	margin-top: 10px;
+}
+#container.direccion #direccionContent form p {
+	width: 50px;
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 10px;
+	text-transform: uppercase;
+	margin-top: 10px;
+}
+.float_left {
+	float: left;
+}
+div.cmf-skinned-select {
+	color: #fff !important;
+	font-family: 'gotham_boldregular' !important;
+	font-size: 16px !important;
+	height: 30px !important;
+	float: left !important;
+	min-width: 64px !important;
+	line-height: 30px !important;
+	text-align: center !important;
+	background: url(../images/btn_select.png) no-repeat right!important;
+	margin-right: 20px !important;
+	margin-top: 12px !important;
+}
+div.cmf-skinned-text {
+	width: 100% !important;
+	height: 100% !important;
+	background: url(../images/bg_forma_big.png) no-repeat bottom;
+	text-transform: uppercase !important;
+}
+#container.direccion #direccionContent form select {
+	text-transform: uppercase !important;
+}
+#container.direccion #direccionContent form select#dia {
+	width: 122px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	float: left;
+}
+#container.direccion #direccionContent form select#mes {
+	width: 141px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.direccion #direccionContent form select#anio {
+	width: 74px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.direccion #direccionContent form select#colonia {
+	width: 378px;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+}
+#container.direccion #direccionContent form textarea {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 14px;
+	width: 825px;
+	height: 50px;
+	margin-top: 15px;
+	background: url(../images/bg_textarea.png) no-repeat bottom center;
+	resize: none;
+	overflow: auto;
+}
+#container.direccion #direccionContent form #alerta {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo.png);
+	text-align: center;
+}
+#container.direccion #direccionContent form #botonesDireccion {
+	width: 330px;
+	margin: 0 auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+#container.direccion #direccionContent form #botonesDireccion #btnCancelar {
+	display: block;
+	float: left;
+}
+#container.direccion #direccionContent form #botonesDireccion #submitDireccion {
+	width: 159px;
+	height: 32px;
+	background: url(../images/btn_enviar.png) no-repeat;
+	border: none;
+	text-indent: -99999px;
+	float: right;
+	cursor: pointer;
+}
+/* =============================================================================
+   Confirmacion
+   ========================================================================== */
+
+#container.confirmacion #confirmacionContent {
+	width: 930px;
+	height: auto;
+	min-height: 555px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat;
+	margin-bottom: 40px;
+	text-align: center;
+}
+#container.confirmacion #catalogo {
+	overflow: hidden;
+	margin-bottom: 50px;
+}
+#container.confirmacion #catalogo .product {
+	width: 440px;
+	height: auto;
+	float: left;
+	margin: 3px;
+	background: url(../images/bg_bottom_product.png) no-repeat center top;
+	padding-top: 10px;
+}
+#container.confirmacion #catalogo .product .productImg {
+	float: left;
+	width: 110px;
+	height: 110px;
+	text-align: center;
+	margin: 10px;
+}
+#container.confirmacion #catalogo .product .productImg span {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+#container.confirmacion #catalogo .product .productImg img {
+	vertical-align: middle;
+}
+#container.confirmacion #catalogo .product .descrProducts {
+	float: left;
+	width: 210px;
+	margin: 5px;
+	text-transform: uppercase;
+}
+#container.confirmacion #catalogo .product .descrProducts h1 {
+	color: #0290ff;
+	font-family: 'gotham_boldregular';
+	font-size: 20px;
+	margin: 10px 5px;
+	text-align: left;
+}
+#container.confirmacion #catalogo .product .descrProducts h2 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 16px;
+	margin: 5px;
+	text-align: left;
+}
+#container.confirmacion #catalogo .product .descrProducts p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 9px;
+	margin: 10px 5px;
+	text-align: left;
+}
+#container.confirmacion #catalogo .product .cantProduct {
+	float: left;
+	width: 40px;
+	margin: 10px;
+}
+#container.confirmacion #catalogo .product .cantProduct p {
+	float: left;
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 45px;
+	line-height: 98px;
+}
+#container.confirmacion #catalogo .product .cantProduct a {
+	display: block;
+	float: left;
+	width: 13px;
+	height: 20px;
+	margin: 40px 12px;
+}
+#container.confirmacion #totalConfirmacion {
+	margin-bottom: 15px;
+}
+#container.confirmacion #totalConfirmacion h1 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 24px;
+	text-transform: uppercase;
+}
+#container.confirmacion #totalConfirmacion h2 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 30px;
+}
+#container.confirmacion #direccionConfirmacion {
+}
+#container.confirmacion #direccionConfirmacion p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	margin: 5px;
+}
+#container.confirmacion #botonesConfirmacion {
+	width: 370px;
+	margin: 0 auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+#container.confirmacion #botonesConfirmacion #btnModificarPedido {
+	display: block;
+	float: left;
+}
+#container.confirmacion #botonesConfirmacion #btnConfirmar {
+	display: block;
+	float: right;
+}
+/* =============================================================================
+   Pedido realizado
+   ========================================================================== */
+
+#container.realizado #realizadoContent {
+	width: 930px;
+	height: auto;
+	min-height: 555px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat;
+	margin-bottom: 40px;
+	padding-top: 45px;
+	text-align: center;
+}
+#container.realizado #realizadoContent p {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 13px;
+	margin-bottom: 100px;
+}
+#container.realizado #realizadoContent h1 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 22px;
+	text-transform: uppercase;
+	margin-bottom: 40px;
+}
+#container.realizado #realizadoContent h2 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 15px;
+	text-transform: uppercase;
+}
+#container.realizado #realizadoContent h3 {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 28px;
+	margin-bottom: 65px;
+}
+/* =============================================================================
+   Mis compras
+   ========================================================================== */
+
+#container.misCompras #misComprasContent {
+	width: 930px;
+	height: auto;
+	min-height: 555px;
+	margin: 0 auto;
+	background: url(../images/bg_gradient_big.png) no-repeat;
+	margin-bottom: 40px;
+	padding-top: 45px;
+	text-align: center;
+}
+#container.misCompras #misComprasContent #tablaCompras {
+	width: 712px;
+	height: auto;
+	margin: 0 auto;
+}
+#container.misCompras #misComprasContent #tituloContent {
+	width: 100%;
+	height: 32px;
+}
+#container.misCompras #misComprasContent .contentTabla.par {
+	width: 100%;
+	height: 32px;
+	background: url(../images/bg_table.png) no-repeat center top;
+}
+#container.misCompras #misComprasContent .contentTabla {
+	width: 100%;
+	height: 32px;
+}
+#container.misCompras #misComprasContent #tituloContent p {
+	color: #0290ff;
+	font-family: 'gotham_boldregular';
+	font-size: 20px;
+	float: left;
+	line-height: 28px;
+	text-transform: uppercase;
+}
+#container.misCompras #misComprasContent .contentTabla p {
+	color: #fff;
+	font-family: 'gotham_boldregular';
+	font-size: 15px;
+	float: left;
+	line-height: 28px;
+	text-transform: uppercase;
+}
+#container.misCompras #misComprasContent p.fecha {
+	width: 240px;
+	text-align: center;
+}
+#container.misCompras #misComprasContent p.folio {
+	width: 180px;
+	text-align: center;
+}
+#container.misCompras #misComprasContent p.total {
+	width: 192px;
+	text-align: center;
+}
+#container.misCompras #misComprasContent p.detalle {
+	width: 85px;
+	text-align: center;
+}
+#container.misCompras #misComprasContent #misComprasBottomImage {
+	display: block;
+	width: 548px;
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+#container.misCompras #misComprasContent #btnRealizarOtroPedido {
+	display: block;
+}
+._error {
+	color: red !important;
+}
+/*.error {
+	width:270px;
+	color:#F00;
+	font-size:13px;
+	text-align:center;
+	margin-top:110px;
+}*/
+
+.recupera {
+	width: 270px;
+	/*position:absolute;*/
+	color: #fff;
+	font-size: 13px;
+	text-align: center;
+	margin-top: 110px;
+}
+.bigLabel_error {
+	color: #f00 !important;/*font-family: 'gotham_mediumregular';*/
+	/*color:red !important;*/
+}
+.smallLabel_error {
+	color: #f00 !important;/*font-family: 'gotham_mediumregular';*/
+	/*color:red !important;*/
+}
+.medLabel_error {
+	color: #f00 !important;/*font-family: 'gotham_mediumregular';*/
+    /*color:red !important;*/
+}
+#errorMessage, #errorMessageCobertura, #email, #emailUse, #idFechanacimientoError, #idErrorFechaNacimiento, #errorMessageSecurity, #idFechaLimite {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo.png);
+	text-align: center;
+}
+
+#errorMessageCoberturaMovil{
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 713px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo_med.png);
+	text-align: center;
+}
+
+#errorMessageProductos, #idTRInvalidEmail, #idTRNotMatch, #idMensajePasado, #idMensajeFueraServicio, #idMensajeMasSemana {
+	color: #fff;
+	font-family: 'gotham_mediumregular';
+	font-size: 12px;
+	width: 513px;
+	margin: 0 auto;
+	height: 24px;
+	margin-top: 15px;
+	line-height: 24px;
+	background: url(../images/bg_rojo.png);
+	text-align: center;
+}
+/*Calificaciones*/
+.star-rating {
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  width: 340px;
+  height:70px;
+  overflow: hidden;
+  position: relative;
+  background: url(../images/starRating.png);
+  background-size:67px;
+}
+.star-rating i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  z-index: 1;
+  background: url(../images/starRating_over.png);
+  background-size:67px;
+}
+.star-rating input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  width: 20%;
+  height: 100%;
+  margin:0;
+  padding:0;
+  z-index: 2;
+  position: relative;
+}
+.star-rating input:hover + i,
+.star-rating input:checked + i {
+  opacity: 1;
+}
+.star-rating i ~ i {
+  width: 40%;
+}
+.star-rating i ~ i ~ i {
+  width: 60%;
+}
+.star-rating i ~ i ~ i ~ i {
+  width: 80%;
+}
+.star-rating i ~ i ~ i ~ i ~ i {
+  width: 100%;
+}
+.text_califica {
+	color:#FFF;
+	 font-family: 'gotham_mediumregular';
+	 font-size:16px;
+	 margin:20px;
+	 top:20px;
+}
+
+#divEnviarPass {
+    color: white;
+    font-family: "gotham_mediumregular";
+    font-size: 20px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+span.small{
+	font-size: 10px;
+}

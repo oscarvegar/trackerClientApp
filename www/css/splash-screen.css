@@ -1,0 +1,171 @@
+body{
+    background: url(../images/init-bg.png) #2e2e2e;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Open Sans', sans-serif;
+}
+.cyan{
+    color: #00ccff;
+}
+.bold{
+    font-weight: bold;
+}
+.center{
+    text-align: center;
+}
+.right{
+    text-align: right;
+}
+.small{
+    font-size: 10px;
+}
+.extra-small{
+    font-size: 8px;
+}
+.float-l{
+    float: left;
+}
+#auth{
+    padding: 20px;
+    background-image: url(../img/back_age.html);
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    overflow-x: hidden;
+    text-align: center;
+    max-width: 700px;
+    margin:0 auto;
+    position: relative;
+    text-transform: uppercase;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -o-border-radius: 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+.auth-body{
+    border: 1px solid white;
+    width: 100%;
+}
+#auth a{
+    color: #fff;
+    text-decoration: none;
+}
+.mfp-bg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1042;
+    overflow: hidden;
+    position: fixed;
+    background-color: transparent !important;
+}
+#splash-logo{
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+.question{
+    font-weight: 700 !important;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#auth select{
+    background: transparent;
+    width: 180px;
+    padding:10px 10px 10px 15px;
+    font-size: 16px;
+    line-height: 1;
+    border:2px solid #fff;
+    border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    height: 38px;
+    -webkit-appearance: none;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    cursor:pointer;
+}
+.select-cnt{
+    margin: 0 auto;
+    width: 180px;
+    height: 38px;
+    overflow: hidden;
+    background: url(../images/select-icon-white.png) no-repeat 149px 9px transparent;
+    border: none;
+}
+span.check{
+    display: inline-block;
+    border: 3px solid white;
+    width: 25px;
+    height: 25px;
+    margin-bottom: -8px;
+}
+span.check:hover{
+    cursor: pointer;
+    background-color: white;
+    background-image: url(../images/check-selected.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.check-align{
+    display: inline-block;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.left-spc{
+    padding-right: 40px;
+}
+.pop-terms{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.powered{
+    font-size: 14px;
+    font-weight: 400 !important;
+    margin-bottom: 20px;
+}
+#adult-validate,
+#state-validate{
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+html,
+body{
+    height: 100%;
+}
+.wrpp-rr{
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+
+/*
+* === ESTILOS MODELO ===
+*/
+/*# Estilos Modelo Miguel Diaz */
+@media (max-width:740px) {
+	.question{font-size:1.5em;}
+	#auth{border-radius:0; width:100%; width:100%; height:100%; }
+	.mfp-container:before{vertical-align:top;}
+	.auth-body{height:100%;}
+	footer{display:none;}
+}
+
+@media (max-width:413px){
+	#auth{border-radius:0; width:100%; height:100%; }
+	.mfp-container:before{vertical-align:top;}
+	.auth-body{height:100%;}
+	#auth-body p{font-size:10px;}
+	.left-spc{padding-right:20px;}
+	.check-align{margin-right:0;}
+	.question{font-size:10px; margin-top:10px; margin-bottom:10px;}
+	footer{dipslay:none;}
+	.pop-terms{padding-left:10px; padding-right:10px; margin-top:10px; margin-bottom:10px;}
+}
