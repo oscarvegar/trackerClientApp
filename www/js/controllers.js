@@ -1,6 +1,6 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
-.controller('ProductosCtrl', function($scope, $ionicModal, $timeout) {
+.controller('ProductosCtrl', function($scope, $rootScope, $ionicModal, $timeout, $cordovaGeolocation) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -42,116 +42,193 @@ angular.module('starter.controllers', [])
 
 
   $scope.productosArray = [
-{
-'idProducto': 33,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440115982601.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440115982678.png',
-'descripcion': 'Bud Light',
-'precio': 170.00,
-'presentacion': 'Bud Light - 18 Pack - 355ml - No retornable'
-},
-{
-'idProducto': 34,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440116133232.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116133309.png',
-'descripcion': 'Corona Extra',
-'precio': 170.00,
-'presentacion': 'Corona Extra - 18 Pack - 355ml - No retornable'
-},
-{
-'idProducto': 35,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440116317974.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116318051.png',
-'descripcion': 'Corona Light',
-'precio': 170.00,
-'presentacion': 'Corona Light - 18 Pack - 355ml - No retornable'
-},
-{
-'idProducto': 36,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440116459637.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116459714.png',
-'descripcion': 'Modelo Especial',
-'precio': 220.00,
-'presentacion': 'Modelo Especial - 18 Pack - 355ml - No retornable'
-},
-{
-'idProducto': 37,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440116568795.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116568872.png',
-'descripcion': 'Stella Artois',
-'precio': 340.00,
-'presentacion': 'Stella Artois - 18 Pack - 330 ml - No Retornable'
-},
-{
-'idProducto': 38,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440116699453.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116699530.png',
-'descripcion': 'Michelob Ultra',
-'precio': 265.00,
-'presentacion': 'Michelob Ultra - 18 Pack - 355ml - No retornable'
-},
-{
-'idProducto': 39,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440169062281.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169062358.png',
-'descripcion': 'Bud Light Raz-Ber-Rita',
-'precio': 205.00,
-'presentacion': 'Bud Light Raz-Ber-Rita - 18 Pack - 8 Oz - No Retornable'
-},
-{
-'idProducto': 40,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440169658601.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169658678.png',
-'descripcion': 'Bud Light Lime-A-Rita',
-'precio': 205.00,
-'presentacion': 'Bud Light Lime-A-Rita - 18 Pack - 8 Oz - No Retornable'
-},
-{
-'idProducto': 41,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440169932088.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169932165.png',
-'descripcion': 'Bud Light Straw-Ber-Rita',
-'precio': 205.00,
-'presentacion': 'Bud Light Straw-Ber-Rita - 18 Pack - 8 Oz - No Retornable'
-},
-{
-'idProducto': 42,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440170191776.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440170191853.png',
-'descripcion': 'Barrilito',
-'precio': 205.00,
-'presentacion': 'Barrilito - 18 Pack - 325 ml - No Retornable'
-},
-{
-'idProducto': 43,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1440607565153.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1440607565230.png',
-'descripcion': 'Promo Bud Light',
-'precio': 170.00,
-'presentacion': 'Compra un 18-Pack de Bud Light bote, y ll&eacute;vate 3 botes adicionales. Aplican Restricciones.'
-},
-{
-'idProducto': 45,
-'cantidad': 0,
-'imagen': 'http://www.modelonow.com/repository/productos/1441243753010.png',
-'imagen_hover': 'http://www.modelonow.com/repository/productos/1441243753087.png',
-'descripcion': 'Bud Light',
-'precio': 120.00,
-'presentacion': 'Bud Light - 12 Pack - 355ml - No retornable'
-}
-];
+    {
+    'idProducto': 33,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440115982601.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440115982678.png',
+    'descripcion': 'Bud Light',
+    'precio': 170.00,
+    'presentacion': 'Bud Light - 18 Pack - 355ml - No retornable'
+    },
+    {
+    'idProducto': 34,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440116133232.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116133309.png',
+    'descripcion': 'Corona Extra',
+    'precio': 170.00,
+    'presentacion': 'Corona Extra - 18 Pack - 355ml - No retornable'
+    },
+    {
+    'idProducto': 35,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440116317974.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116318051.png',
+    'descripcion': 'Corona Light',
+    'precio': 170.00,
+    'presentacion': 'Corona Light - 18 Pack - 355ml - No retornable'
+    },
+    {
+    'idProducto': 36,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440116459637.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116459714.png',
+    'descripcion': 'Modelo Especial',
+    'precio': 220.00,
+    'presentacion': 'Modelo Especial - 18 Pack - 355ml - No retornable'
+    },
+    {
+    'idProducto': 37,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440116568795.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116568872.png',
+    'descripcion': 'Stella Artois',
+    'precio': 340.00,
+    'presentacion': 'Stella Artois - 18 Pack - 330 ml - No Retornable'
+    },
+    {
+    'idProducto': 38,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440116699453.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440116699530.png',
+    'descripcion': 'Michelob Ultra',
+    'precio': 265.00,
+    'presentacion': 'Michelob Ultra - 18 Pack - 355ml - No retornable'
+    },
+    {
+    'idProducto': 39,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440169062281.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169062358.png',
+    'descripcion': 'Bud Light Raz-Ber-Rita',
+    'precio': 205.00,
+    'presentacion': 'Bud Light Raz-Ber-Rita - 18 Pack - 8 Oz - No Retornable'
+    },
+    {
+    'idProducto': 40,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440169658601.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169658678.png',
+    'descripcion': 'Bud Light Lime-A-Rita',
+    'precio': 205.00,
+    'presentacion': 'Bud Light Lime-A-Rita - 18 Pack - 8 Oz - No Retornable'
+    },
+    {
+    'idProducto': 41,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440169932088.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440169932165.png',
+    'descripcion': 'Bud Light Straw-Ber-Rita',
+    'precio': 205.00,
+    'presentacion': 'Bud Light Straw-Ber-Rita - 18 Pack - 8 Oz - No Retornable'
+    },
+    {
+    'idProducto': 42,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440170191776.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440170191853.png',
+    'descripcion': 'Barrilito',
+    'precio': 205.00,
+    'presentacion': 'Barrilito - 18 Pack - 325 ml - No Retornable'
+    },
+    {
+    'idProducto': 43,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1440607565153.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1440607565230.png',
+    'descripcion': 'Promo Bud Light',
+    'precio': 170.00,
+    'presentacion': 'Compra un 18-Pack de Bud Light bote, y ll&eacute;vate 3 botes adicionales. Aplican Restricciones.'
+    },
+    {
+    'idProducto': 45,
+    'cantidad': 0,
+    'imagen': 'http://www.modelonow.com/repository/productos/1441243753010.png',
+    'imagen_hover': 'http://www.modelonow.com/repository/productos/1441243753087.png',
+    'descripcion': 'Bud Light',
+    'precio': 120.00,
+    'presentacion': 'Bud Light - 12 Pack - 355ml - No retornable'
+    }
+  ];
 
+
+})
+
+.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation) {
+  var datosCompraInit = {
+    nombre: '',
+    ap_pat: '',
+    ap_mat: '',
+    direccion: {
+      calle: '',
+      no_ext: '',
+      no_int: '',
+      colonia: '',
+      del_mun: '',
+      estado: '',
+      pais: ''
+    },
+    contacto: {
+      tel: '',
+      movil: '',
+      nextel: '',
+      email: ''
+    },
+    location: {
+      coordinates: new Array()
+    },
+    detalle: [
+      {
+        producto: 1,
+        cantidad: 123
+      }
+    ]
+  };
+
+  $scope.datosCompra = angular.copy(datosCompraInit);
+
+  $scope.enviarOrdenCompra = function() {
+    console.log('DatosCompraCtrl.enviarOrdenCompra');
+
+    $rootScope.orden = {};
+
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    $cordovaGeolocation.getCurrentPosition(posOptions)
+      .then(function (position) {
+        var latitude = position.coords.latitude
+        var longitude = position.coords.longitude
+
+        $scope.datosCompra.location.coordinates = new Array();
+        $scope.datosCompra.location.coordinates.push(longitude);
+        $scope.datosCompra.location.coordinates.push(latitude);
+
+        console.log('DatosCompra :: ', $scope.datosCompra);
+
+        $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
+          .success(function(response) {
+            console.log('Response :: ', response);
+            $scope.names = response.records;
+          })
+          .error(function(error) {
+            console.log('ERROR ::', error);
+            $scope.datosCompra = angular.copy(datosCompraInit);
+          });
+        ;
+
+      }, function(err) {
+        // error
+      });
+
+  }
+
+  $scope.cancelarOrden = function() {
+    console.log('DatosCompraCtrl.cancelarOrden');
+  }
+
+  $scope.regresar = function() {
+    console.log('DatosCompraCtrl.regresar');
+  }
 
 })
 

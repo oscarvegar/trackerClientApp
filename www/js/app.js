@@ -38,6 +38,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/productos",
     templateUrl: "productos.html",
     controller: 'ProductosCtrl'
+  })
+  .state('datos_compra', {
+    url: "/datos_compra",
+    templateUrl: "datos_compra.html",
+    controller: 'DatosCompraCtrl'
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/productos');
