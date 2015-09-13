@@ -251,6 +251,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+ 
   $scope.totalCompra = 0;
   $scope.detalle;
 
