@@ -1,283 +1,110 @@
-
-
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>ModeloNow | Cerveza a Domicilio</title>
 
-<!-- Mirrored from www.modelonow.com/index.action by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 12 Sep 2015 19:57:53 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
-<head>
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-   <meta name="revisit-after" content="1 days">
-    
-    
+  <link href="./css/css" rel="stylesheet" type="text/css">
+  <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="./css/foot.css">
+  <link type="text/css" rel="stylesheet" href="./css/magnific-popup.css">
+  <link type="text/css" rel="stylesheet" href="./css/core.css">
+  <link type="text/css" rel="stylesheet" href="./css/fb-style.css">
+    <!-- IF using Sass (run gulp sass first), then remove the CSS include above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
 
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
 
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.min.js"></script>
 
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html"><img src="./promos_files/logo-modelonow.png"></a>
+          </div>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#" onclick="void(0)">Iniciar sesi&oacute;n</a></li>
+              <li id="launch" data-container="body" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
+                <a href="#"><span class="blue">
+                  <!-- <img id="cart-icon-anim" src="images/ico-carrito.png">  -->
+                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">0.00</span> (<span class="qty-number">0</span>) <span class="caret blue"></span>
+                </a>
+              </li>
 
-<meta charset="UTF-8">
-<meta name="google-site-verification" content="a21mDSmOZoezR5PSL0BSoSm8bO0FjVo_BHX6cZ6uNrc" />
-<meta name="description" content="ModeloNow: Cerveza a Domicilio: Ir por las cheves es historia. Ahora,  llegan directo a tu casa, bien frÌas y de volada! Compra tu cerveza favorita en la puerta de tu casa">
-<meta name="keywords" content="Cerveza a Domicilio, Bud Light, Venta de Cerveza, Cerveza Corona, Corona a Domicilio">
-<meta name="author" content="ModeloNow powered by Bud Light">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>ModeloNow | Cerveza a Domicilio</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/general.css" media="screen, projection">
-<link rel="stylesheet" type="text/css" href="css/splash-screen.css">
-<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-<link rel="stylesheet" type="text/css" href="css/foot.css">
-<link href='../fonts.googleapis.com/css54ec.css?family=Open+Sans:400,300,700,600' rel='stylesheet' type='text/css'>
-<script src="js/jquery-1.8.3.min.js"></script>
-<script src="js/modernizr-2.0.6.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/popup-init.js"></script>
-<!-- <script src="js/foot.js"></script> -->
-<script src="js/jquery.backstretch.js"></script>
-<script src="js/stripesUtil.js"></script>
-<script src="js/validateUtil.js"></script>
-<script>
-    function mensaje(){
-    	alert("MESSAGE");
-        $("#adult-validate").show();
-    }
-    
-    $(document).ready(function() {
-        
-    });
-    
-    $( "#target" ).click(function() {
-    	  alert( "Handler for .click() called." );
-    	});
-    
-</script>
-<script type="text/javascript">
-
-function validarEstado(){
-	$('#check_no').css('background-image','none');
-	$('#check_yes').css('background-image','none');
-	$('#adult-validate').fadeOut()
-	$('#state-validate').fadeOut()
-	$('#state-validate-more').fadeOut()
-
-	var estado = $("#selEstados").val();
-    
-    if(estado == "-1"){
-        //validateStripes($('form')[0], 'valida','idIMGLoad');
-        $('#state-validate').fadeIn()
-    }
-}
-
-function sendSumbmit(){
-	
-	var estate = $("#selEstados").val();
-	
-	if (estate == "-1"){
-		$('#state-validate-more').fadeIn()
-	} else {
-		validateStripes($('form')[0], 'valida','idIMGLoad');
-	}  
-}
-
-function deleteMessage(){
-	$('#adult-validate').fadeIn()
-	$('#state-validate').fadeOut()
-	$('#state-validate-more').fadeOut()
-}
-
-</script>
-<style type="text/css">
-
-#hielos {
-    display: none;
-}
-/*body {
-    background: white url('images/backgroundNuevo2.jpg') no-repeat center top;
-}*/
-#container {
-  width: 980px;
-  margin: 395px auto 0 auto;
-  position: relative;
-  padding-bottom: 100px;
-  padding-top: 12px;
-  background: url('images/bg_modal_age.png') center top no-repeat;
-}
-
-</style>
-</head>
-<body>    
-<script type="text/javascript">
-function trackingNoMayor(){    
-    document.getElementById('idFrame').src="trackingMenorEdad.html";
-}        
-</script>  
-<iframe id="idFrame" src="#" style="display: none;"></iframe>
-<!-- Google Tag Manager -->
-<noscript><iframe src="http://www.googletagmanager.com/ns.html?id=GTM-NM8B69"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NM8B69');</script>
-<!-- End Google Tag Manager -->
-
-<script>(function() {
-var _fbq = window._fbq || (window._fbq = []);
-if (!_fbq.loaded) {
-var fbds = document.createElement('script');
-fbds.async = true;
-fbds.src = '../connect.facebook.net/en_US/fbds.js';
-var s = document.getElementsByTagName('script')[0];
-s.parentNode.insertBefore(fbds, s);
-_fbq.loaded = true;
-}
-_fbq.push(['addPixelId', '721967397872251']);
-})();
-window._fbq = window._fbq || [];
-window._fbq.push(['track', 'PixelInitialized', {}]);
-</script>
-<noscript><img height="1" width="1" alt="" style="display:none" src="../www.facebook.com/traa30.gif?id=721967397872251&amp;ev=PixelInitialized" /></noscript>
-<script>
-	//resize background
-	//$.backstretch(["images/background.jpg"]);
-	$(window).resize(function(){
-		var height = $(window).height();
-		var hielos = $("#hielos");
-		height < 855 ? hielos.css('top','550px') : hielos.css('top', height - 305);
-		console.log(height - 305);
-	});
-	$(window).load(function(){
-		var height = $(window).height();
-		var hielos = $("#hielos");
-		height < 855 ? hielos.css('top','550px') : hielos.css('top', height - 305);
-	});
-	
-</script>
-<div class="wrpp-rr">
-	<!--<div id="container" class="index">
-	<h1>¿Eres mayor de edad?</h1>
-	<a href="state.action" class="btnOption"><img src="images/btn_si.png" width="91" height="32" alt=""/></a>
-        <a href="javascript:mensaje();" class="btnOption" onclick="trackingNoMayor();"><img src="images/btn_no.png" width="91" height="32" alt=""/></a>
-    <div style="display: none;"  id="errorMessageSecurity"></div>
-	<p style="display: none; margin-top:5px;" id="errorMessage" >Lo sentimos, el servicio solo est&aacute; disponible para mayores de edad.</p>
-</div>-->
-
-<div id="hielos"></div>
-    <div id="auth" class="zoom-anim-dialog mfp-hide">
-        <div class="auth-body">
-            <img id="splash-logo" src="images/modelo-now-splash.png">
-            <p>Cerveza a domicilio.<br>de volada y bien fr&iacute;as.</p>
-            <p class="question">¿En qu&eacute; estado te encuentras?</p>
-            <form name="form1" action="https://www.modelonow.com/state.action" method="post">
-	            <div class="select-cnt">
-	                <select name="cp" id="selEstados" onchange="validarEstado();">
-	                        
-	                            <option value="64000">Nuevo León</option>
-	                        
-	                            <option value="83000">Sonora</option>
-	                        
-	                		<option value="-1">Otros</option>
-	                </select>
-	            </div>
-            
-            <p class="question">¿Eres mayor de edad?</p>
-            <p>
-            	<a href="state.html" >
-            	<span class="check" onclick="sendSumbmit();" id="check_yes"></span></a>
-            	<span class="check-align left-spc">S&Iacute;</span>
-            	<span class="check" onclick="deleteMessage()" id="check_no"></span>
-            	<span class="check-align">NO</span>
-            </p>
-            <div style="display: none;"><input type="hidden" name="_sourcePage" value="fcLx4Aj__rPO62_inDmcbA==" /><input type="hidden" name="__fp" value="FZC47-tjgv4=" /></div></form>
-            <div id="adult-validate" style="display: none;">
-                <p>Lo sentimos, el servicio sólo está disponible para mayores de edad.</p>
-            </div>
-            <div id="state-validate" style="display: none;">
-                <p>Lo sentimos, por el momento el servicio no tiene cobertura en tu zona. Ir a <a href="http://www.modelhogar.com.mx/">MODELOHOGAR</a></p>
-            </div>
-            <div id="state-validate-more" style="display: none;">
-                <p>Seleccione una zona diferente. <!--Ir a <a href="http://www.modelhogar.com.mx/">MODELOHOGAR</a>--></p>
-            </div>
-            <p class="small pop-terms">Al enviar esta forma manifiesta su conformidad con la política de confidencialidad y el uso de cookies des este sitio web. este sitio utiliza cookies, para más información, lea nuestra <a title="Politicas de privacidad" href="https://facebook.digiworks.com.mx/gmodelo/registro/politicas.html">política de privacidad.</a></p>
-            <p class="powered">Powered by Grupo Modelo</p>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
         </div>
-        <img style="display: none;" id="idIMGLoad" alt="loading" src="images/load.gif" width="16" height="16">
-    </div>
-    
-    <p style="display: none; margin-top:5px;" id="errorMessage" >Lo sentimos, el servicio solo est&aacute; disponible para mayores de edad.</p>
-<footer>
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-				<div class="vertical-cnt">
-					<div class="vertical-slv">
-                       <div class="telephone">
-                           <span class="bold">01-800-<span class="blue">Modelonow</span></span><br><span class="small">(01-800-6633566)</span>
-                       </div>
-                    </div>
-                 </div>
-             </div>
-             <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
-                 <div class="vertical-cnt">
-                     <div class="vertical-slv">
-                         <div class="text-center">
-                             <ul class="link-row">
-<!--                                  <li><a href="#">Quiénes somos</a><span class="split">&nbsp;&#124;&nbsp;</span></li> -->
-                                 <li><a href="https://facebook.digiworks.com.mx/gmodelo/registro/politicas.html" target="_blank">Políticas de privacidad</a><span class="split">&nbsp;&#124;&nbsp;</span></li>
-                                 <li><a href="http://www.gmodelo.mx/politicas/politicas_uso.html" target="_blank">Políticas de uso</a><span class="split">&nbsp;&#124;&nbsp;</span></li>
-                                 <li class="no-split"><a href="restricciones.html" target="_blank">Restricciones de entrega</a></li>
-                             </ul>
-                         </div>
-                     </div>
-                 </div>
-              </div>
-            <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+        <!-- /.container-fluid -->
+        <form name="formProductosPromosActionBean1" action="./promos_files/promos.html" method="post">
+          <div id="cart">
+            <div id="productosSolicitados"></div>
+            <div id="productosTotal">
+              <ul class="product-cost">
+                <li>Total $<span id="total-price">0.00</span></li>
+                <li id="go-cart"><button class="btn" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Carrito&#39;, &#39;Comprar&#39;, &#39;Solicitud de pedidos&#39;);">Comprar</button></li>
+              </ul>
+            </div>
+          </div>
+          <div style="display: none;"><input type="hidden" name="_sourcePage" value="BQhPUmxH_onW3zUf8aedBiljn6Wy84_s"><input type="hidden" name="__fp" value="gTdkvlfuXTY="></div>
+        </form>
+      </nav>
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+    <footer>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                 <div class="vertical-cnt">
-                    <div class="vertical-slv notice">
-                        Permiso cofepris: 143300201A2948<br>
-                        <span class="lower">Sólo para mayores de edad</span><br>
-                        <span class="lower">Todo con medida</span>
+                  <div class="vertical-slv">
+                    <div class="telephone">
+                      <span class="bold">01-800-<span class="blue">Modelonow</span></span><br><span class="small">(01-800-6633566)</span>
                     </div>
+                  </div>
                 </div>
+              </div>
+              <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
+                <div class="vertical-cnt">
+                  <div class="vertical-slv">
+                    <div class="text-center">
+                      <ul class="link-row">
+                        <!--                                  <li><a href="#">Qui&eacute;nes somos</a><span class="split">&nbsp;&#124;&nbsp;</span></li> -->
+                        <li><a href="https://facebook.digiworks.com.mx/gmodelo/registro/politicas.html" target="_blank">Pol&iacute;ticas de privacidad</a><span class="split">&nbsp;|&nbsp;</span></li>
+                        <li><a href="http://www.gmodelo.mx/politicas/politicas_uso.html" target="_blank">Pol&iacute;ticas de uso</a><span class="split">&nbsp;|&nbsp;</span></li>
+                        <li class="no-split"><a href="http://www.modelonow.com/restricciones.html" target="_blank">Restricciones de entrega</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+                <div class="vertical-cnt">
+                  <div class="vertical-slv notice">
+                    Permiso cofepris: 143300201A2948<br>
+                    <span class="lower">S&oacute;lo para mayores de edad</span><br>
+                    <span class="lower">Todo con medida</span>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-    </div>
-</footer>
+          </div>
+        </footer>
+  </body>
 
-</div>
-<script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Organization",
-      "url": "http://www.modelonow.com",
-      "logo": "https://www.modelonow.com/images/logo_modelo-now_small.png"
-    }
-</script>
-<script type="application/ld+json">
-{ "@context" : "http://schema.org",
-  "@type" : "Organization",
-  "url" : "http://www.modelonow.com",
-  "contactPoint" : [
-    { "@type" : "ContactPoint",
-      "telephone" : "+52 01-800-6633566",
-      "contactType" : "customer service"
-    } ] }
-</script>
-<script type="application/ld+json">
-{ "@context" : "http://schema.org",
-  "@type" : "Organization",
-  "name" : "ModeloNow – Cerveza a Domicilio",
-  "url" : "http://www.modelonow.com",
-  "sameAs" : [ "http://www.facebook.com/modelonow",
-    "http://www.twitter.com/modelonow",
-    " https://plus.google.com/b/110309126533967156104 "] 
-}
-</script>
-</body>
-
-<!-- Mirrored from www.modelonow.com/index.action by HTTrack Website Copier/3.x [XR&CO'2013], Sat, 12 Sep 2015 19:57:56 GMT -->
 </html>
