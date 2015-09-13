@@ -204,7 +204,7 @@ angular.module('starter.controllers', [])
       if(posicion !== -1){
         $scope.detalle[posicion].cantidad = $scope.detalle[posicion].cantidad + 1;
       }else{
-        $scope.detalle.push({producto:producto.idProducto, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio});
+        $scope.detalle.push({producto:producto.idProducto, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen});
       }
     }
   };
