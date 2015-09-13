@@ -155,7 +155,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 
-.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation) {
+.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state) {
   var datosCompraInit = {
     nombre: '',
     ap_pat: '',
@@ -165,6 +165,7 @@ angular.module('starter.controllers', ['ngCordova'])
       no_ext: '',
       no_int: '',
       colonia: '',
+      cp: '',
       del_mun: '',
       estado: '',
       pais: ''
@@ -205,7 +206,8 @@ angular.module('starter.controllers', ['ngCordova'])
 
         console.log('DatosCompra :: ', $scope.datosCompra);
 
-        $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
+        // $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
+        $http.post('http://yoplanner.com:1337/api/orden/place', $scope.datosCompra)
           .success(function(response) {
             console.log('Response :: ', response);
             $scope.names = response.records;
@@ -224,10 +226,12 @@ angular.module('starter.controllers', ['ngCordova'])
 
   $scope.cancelarOrden = function() {
     console.log('DatosCompraCtrl.cancelarOrden');
+    $state.go('productos');
   }
 
   $scope.regresar = function() {
     console.log('DatosCompraCtrl.regresar');
+    $state.go('comprar');
   }
 
 })

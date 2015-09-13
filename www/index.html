@@ -5,12 +5,12 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>ModeloNow | Cerveza a Domicilio</title>
 
-  <link href="./css/css" rel="stylesheet" type="text/css">
-  <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="./css/foot.css">
-  <link type="text/css" rel="stylesheet" href="./css/magnific-popup.css">
-  <link type="text/css" rel="stylesheet" href="./css/core.css">
-  <link type="text/css" rel="stylesheet" href="./css/fb-style.css">
+    <link href="./css/css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="./css/foot.css">
+    <link type="text/css" rel="stylesheet" href="./css/magnific-popup.css">
+    <link type="text/css" rel="stylesheet" href="./css/core.css">
+    <link type="text/css" rel="stylesheet" href="./css/fb-style.css">
     <!-- IF using Sass (run gulp sass first), then remove the CSS include above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
@@ -21,6 +21,7 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script src="lib/ng-cordova.min.js"></script>
 
     <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.min.js"></script>-->
     <script src="js/angular-1.3.8/angular-resource.min.js"></script>
@@ -29,72 +30,72 @@
     <script src="js/controllers.js"></script>
   </head>
   <body ng-controller="AppCtrl">
-  <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="./index.html"><img src="./promos_files/logo-modelonow.png"></a>
-          </div>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="" onclick="void(0)">...</a></li>
-              <li id="launch">
-                <a ui-sref="comprar" ><span class="blue">
-                  <!-- <img id="cart-icon-anim" src="images/ico-carrito.png">  -->
-                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">{{totalCompra | currency}}</span> (<span class="qty-number">{{numProductos()}}</span>) <span class="caret blue"></span>
-                </a>
-              </li>
-
-            </ul>
-          </div>
-          <!-- /.navbar-collapse -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="./index.html"><img src="./promos_files/logo-modelonow.png"></a>
         </div>
-        <!-- /.container-fluid -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" onclick="void(0)">...</a></li>
+            <li id="launch">
+              <a href="/#/comprar" ><span class="blue">
+                <!-- <img id="cart-icon-anim" src="images/ico-carrito.png">  -->
+                <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">{{totalCompra | currency}}</span> (<span class="qty-number">{{numProductos()}}</span>) <span class="caret blue"></span>
+              </a>
+            </li>
 
-      </nav>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+
+    </nav>
     <div ui-view></div>
 
   </body>
-<footer>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                <div class="vertical-cnt">
-                  <div class="vertical-slv">
-                    <div class="telephone">
-                      <span class="bold">01-800-<span class="blue">Modelonow</span></span><br><span class="small">(01-800-6633566)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
-                <div class="vertical-cnt">
-                  <div class="vertical-slv">
-                    <div class="text-center">
-                      <ul class="link-row">
-                        <!--                                  <li><a href="#">Qui&eacute;nes somos</a><span class="split">&nbsp;&#124;&nbsp;</span></li> -->
-                        <li><a href="https://facebook.digiworks.com.mx/gmodelo/registro/politicas.html" target="_blank">Pol&iacute;ticas de privacidad</a><span class="split">&nbsp;|&nbsp;</span></li>
-                        <li><a href="http://www.gmodelo.mx/politicas/politicas_uso.html" target="_blank">Pol&iacute;ticas de uso</a><span class="split">&nbsp;|&nbsp;</span></li>
-                        <li class="no-split"><a href="http://www.modelonow.com/restricciones.html" target="_blank">Restricciones de entrega</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
-                <div class="vertical-cnt">
-                  <div class="vertical-slv notice">
-                    Permiso cofepris: 143300201A2948<br>
-                    <span class="lower">S&oacute;lo para mayores de edad</span><br>
-                    <span class="lower">Todo con medida</span>
-                  </div>
-                </div>
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+          <div class="vertical-cnt">
+            <div class="vertical-slv">
+              <div class="telephone">
+                <span class="bold">01-800-<span class="blue">Modelonow</span></span><br><span class="small">(01-800-6633566)</span>
               </div>
             </div>
           </div>
-        </footer>
+        </div>
+        <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
+          <div class="vertical-cnt">
+            <div class="vertical-slv">
+              <div class="text-center">
+                <ul class="link-row">
+                  <!--                                  <li><a href="#">Qui&eacute;nes somos</a><span class="split">&nbsp;&#124;&nbsp;</span></li> -->
+                  <li><a href="https://facebook.digiworks.com.mx/gmodelo/registro/politicas.html" target="_blank">Pol&iacute;ticas de privacidad</a><span class="split">&nbsp;|&nbsp;</span></li>
+                  <li><a href="http://www.gmodelo.mx/politicas/politicas_uso.html" target="_blank">Pol&iacute;ticas de uso</a><span class="split">&nbsp;|&nbsp;</span></li>
+                  <li class="no-split"><a href="http://www.modelonow.com/restricciones.html" target="_blank">Restricciones de entrega</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2">
+          <div class="vertical-cnt">
+            <div class="vertical-slv notice">
+              Permiso cofepris: 143300201A2948<br>
+              <span class="lower">S&oacute;lo para mayores de edad</span><br>
+              <span class="lower">Todo con medida</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>
