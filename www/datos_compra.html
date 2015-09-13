@@ -223,9 +223,18 @@
 	        	</div>
 
         		<div class="form-group">
-        			<button class="btn btn-success form-control" ng-click="enviarOrdenCompra()">ENVIAR ORDEN</button><br><br>
-		        	<button class="btn btn-info form-control" ng-click="regresar()">REGRESAR</button><br><br>
-		        	<button class="btn btn-danger form-control" ng-click="cancelarOrden()">CANCELAR ORDEN</button>
+        			<button class="btn btn-success form-control" ng-click="enviarOrdenCompra()">
+        				<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+        				&nbsp;&nbsp;ENVIAR ORDEN
+        			</button><br><br>
+		        	<button class="btn btn-info form-control" ng-click="regresar()">
+		        		<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+		        		&nbsp;&nbsp;REGRESAR
+		        	</button><br><br>
+		        	<button class="btn btn-danger form-control" ng-click="cancelarOrden()">
+		        		<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+		        		&nbsp;&nbsp;CANCELAR ORDEN
+		        	</button>
 	        	</div>
         	</form>
         </div>
