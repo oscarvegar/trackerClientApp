@@ -14,15 +14,16 @@
     <!-- IF using Sass (run gulp sass first), then remove the CSS include above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
-
+    <script type="text/javascript" src="js/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.min.js"></script>
-
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.min.js"></script>-->
+    <script src="js/angular-1.3.8/angular-resource.min.js"></script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
@@ -41,10 +42,10 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li><a href="#" onclick="void(0)">Iniciar sesi&oacute;n</a></li>
-              <li id="launch" data-container="body" data-toggle="popover" data-placement="bottom" data-original-title="" title="">
-                <a href="#"><span class="blue">
+              <li id="launch">
+                <a href="/#/comprar" ><span class="blue">
                   <!-- <img id="cart-icon-anim" src="images/ico-carrito.png">  -->
-                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">{{totalCompra | currency}}</span> (<span class="qty-number">0</span>) <span class="caret blue"></span>
+                  <span class="frm-cart-icon"></span><span class="left-spc">Carrito</span></span> <span class="list-price">{{totalCompra | currency}}</span> (<span class="qty-number">{{numProductos()}}</span>) <span class="caret blue"></span>
                 </a>
               </li>
 
@@ -53,21 +54,12 @@
           <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
-        <form name="formProductosPromosActionBean1" action="./promos_files/promos.html" method="post">
-          <div id="cart">
-            <div id="productosSolicitados"></div>
-            <div id="productosTotal">
-              <ul class="product-cost">
-                <li>Total $<span id="total-price">0.00</span></li>
-                <li id="go-cart"><button class="btn" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;Carrito&#39;, &#39;Comprar&#39;, &#39;Solicitud de pedidos&#39;);">Comprar</button></li>
-              </ul>
-            </div>
-          </div>
-          <div style="display: none;"><input type="hidden" name="_sourcePage" value="BQhPUmxH_onW3zUf8aedBiljn6Wy84_s"><input type="hidden" name="__fp" value="gTdkvlfuXTY="></div>
-        </form>
+
       </nav>
-    <ion-nav-view></ion-nav-view>
-    <footer>
+    <div ui-view></div>
+
+  </body>
+<footer>
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -105,6 +97,4 @@
             </div>
           </div>
         </footer>
-  </body>
-
 </html>

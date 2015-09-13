@@ -1,0 +1,30 @@
+<div><br>
+	<fieldset>
+		<legend>Resumen de compra</legend>
+		<table class="table">
+			<thead>
+				<th></th>
+				<th>Producto</th>
+				<th>Cantidad</th>
+				<th>Costo</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="producto in detalle">
+					<td><img class="media-object" src="{{producto.imagen}}" height="50" width="50"></td>
+					<td>{{producto.nombre}}</td>
+					<td>{{producto.cantidad}}</td>
+					<td>{{producto.precio * producto.cantidad | currency}}</td>
+				</tr>
+			</tbody>
+		</table>
+		Total de su compra: <strong>{{totalCompra | currency}}</strong><br><br>
+		<div class="row">
+			<div class="col-md-2">
+				<button type="button" class="btn btn-info">Comprar</button><br><br>
+			</div>
+			<div class="col-md-2 col-md-offset-1">
+				<button type="button" class="btn btn-info" ng-click="go('productos')">Volver a cat&aacute;logo</button>
+			</div>
+		</div>
+	</fieldset>
+</div>

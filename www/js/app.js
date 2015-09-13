@@ -29,9 +29,9 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
-  .state('promos', {
-    url: "/promos",
-    templateUrl: "promos.html",
+  .state('comprar', {
+    url: "/comprar",
+    templateUrl: "modalCompra.html",
     controller: 'ProductosCtrl'
   })
   .state('productos', {
@@ -40,5 +40,5 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     controller: 'ProductosCtrl'
   });
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/productos');
 });
