@@ -13,9 +13,9 @@
                             <div>
                                 <div class="col-md-12">
 
-                                    <div class="{{'product-item.item-'+producto.id}}" style="height: 263px;">
-                                    <!--<img class="media-object" src="{{producto.imagen}}">-->
-                                        <div class="product-qty1" style="width: 263px;">
+                                    <div class="{{'product-item.item-'+producto.id}}" >
+                                    <img class="media-object" ng-src="{{producto.imagen}}">
+                                        <div class="product-qty1" >
                                             <div class="less-qty">
                                                 <a href="" ng-click="restarPrecio(producto.precio); quitarProducto(producto)"><img src="./promos_files/restar.png">
                                                 </a>

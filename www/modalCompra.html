@@ -10,7 +10,7 @@
 			</thead>
 			<tbody>
 				<tr ng-repeat="producto in detalle">
-					<td><img class="media-object" src="{{producto.imagen}}" height="50" width="50"></td>
+					<td><img class="media-object" ng-src="{{producto.imagen}}" height="50" width="50"></td>
 					<td>{{producto.nombre}}</td>
 					<td>{{producto.cantidad}}</td>
 					<td>{{producto.precio * producto.cantidad | currency}}</td>
