@@ -150,12 +150,12 @@ angular.module('starter.controllers', [])
     var continuar = true;
     var posicion = -1;
     if($scope.detalle === undefined){
-      $scope.detalle = [{producto:producto.idProducto, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen}]
+      $scope.detalle = [{producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen}]
     }else{
 
       angular.forEach($scope.detalle, function(value, key){
         if(continuar){
-          if(value.producto === producto.idProducto){
+          if(value.producto === producto.id){
             posicion = key
             continuar = false;
           }
@@ -164,7 +164,7 @@ angular.module('starter.controllers', [])
       if(posicion !== -1){
         $scope.detalle[posicion].cantidad = $scope.detalle[posicion].cantidad + 1;
       }else{
-        $scope.detalle.push({producto:producto.idProducto, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen});
+        $scope.detalle.push({producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen});
       }
     }
   };
@@ -175,7 +175,7 @@ angular.module('starter.controllers', [])
       return;
     }else{
       angular.forEach($scope.detalle, function(value, key){
-        if(value.producto === producto.idProducto){
+        if(value.producto === producto.id){
           posicion = key;
         }
       });
