@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .controller('ProductosCtrl', function($scope, $ionicModal, $timeout, $http) {
 
@@ -133,9 +133,9 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope) {
   $scope.totalCompra = 0;
-  $scope.detalle;
+  $rootScope.detalle;
 
   $scope.sumarPrecio = function(precio){
     $scope.totalCompra = $scope.totalCompra + precio;
@@ -149,11 +149,11 @@ angular.module('starter.controllers', [])
   $scope.agregarProducto = function(producto){
     var continuar = true;
     var posicion = -1;
-    if($scope.detalle === undefined){
-      $scope.detalle = [{producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen}]
+    if($rootScope.detalle === undefined){
+      $rootScope.detalle = [{producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen}]
     }else{
 
-      angular.forEach($scope.detalle, function(value, key){
+      angular.forEach($rootScope.detalle, function(value, key){
         if(continuar){
           if(value.producto === producto.id){
             posicion = key
@@ -162,28 +162,28 @@ angular.module('starter.controllers', [])
         }
       });
       if(posicion !== -1){
-        $scope.detalle[posicion].cantidad = $scope.detalle[posicion].cantidad + 1;
+        $rootScope.detalle[posicion].cantidad = $rootScope.detalle[posicion].cantidad + 1;
       }else{
-        $scope.detalle.push({producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen});
+        $rootScope.detalle.push({producto:producto.id, cantidad:1, nombre: producto.descripcion, presentacion: producto.presentacion, precio:producto.precio, imagen:producto.imagen});
       }
     }
   };
 
   $scope.quitarProducto = function(producto){
     var posicion = -1;
-    if($scope.detalle === undefined){
+    if($rootScope.detalle === undefined){
       return;
     }else{
-      angular.forEach($scope.detalle, function(value, key){
+      angular.forEach($rootScope.detalle, function(value, key){
         if(value.producto === producto.id){
           posicion = key;
         }
       });
       if(posicion!==-1){
-        if($scope.detalle[posicion].cantidad===1){
-          $scope.detalle.splice(posicion, 1);
+        if($rootScope.detalle[posicion].cantidad===1){
+          $rootScope.detalle.splice(posicion, 1);
         }else{
-          $scope.detalle[posicion].cantidad = $scope.detalle[posicion].cantidad - 1;
+          $rootScope.detalle[posicion].cantidad = $rootScope.detalle[posicion].cantidad - 1;
         }
       }
     }
@@ -192,10 +192,10 @@ angular.module('starter.controllers', [])
 
   $scope.numProductos = function(){
     var cantidad = 0;
-    if($scope.detalle === undefined){
+    if($rootScope.detalle === undefined){
       return cantidad;
     }else{
-      angular.forEach($scope.detalle, function(value, key){
+      angular.forEach($rootScope.detalle, function(value, key){
         cantidad = cantidad + value.cantidad;
       });
       return cantidad;
@@ -205,16 +205,16 @@ angular.module('starter.controllers', [])
   $scope.numProducto = function(idProducto){
     var cantidad = 0;
     var posicion = -1;
-    if($scope.detalle === undefined){
+    if($rootScope.detalle === undefined){
       return cantidad;
     }else{
-      angular.forEach($scope.detalle, function(value, key){
+      angular.forEach($rootScope.detalle, function(value, key){
         if(value.producto === idProducto){
           posicion = key;
         }
       });
       if(posicion!==-1)
-        return $scope.detalle[posicion].cantidad;
+        return $rootScope.detalle[posicion].cantidad;
       else
         return cantidad;
     }
