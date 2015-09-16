@@ -1,4 +1,12 @@
-angular.module('starter.controllers', ['ngCordova'])
+angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
+
+.config(function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+    v: '3.20', //defaults to latest 3.X anyhow
+    libraries: 'weather,geometry,visualization'
+  });
+})
 
 .controller('ProductosCtrl', function($scope, $ionicModal, $timeout, $http) {
 
@@ -52,7 +60,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 
 })
-.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state) {
+.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state, uiGmapGoogleMapApi) {
   var datosCompraInit = {
     nombre: '',
     ap_pat: '',
@@ -82,19 +90,48 @@ angular.module('starter.controllers', ['ngCordova'])
 
   $scope.datosCompra = angular.copy(datosCompraInit);
 
-  $scope.enviarOrdenCompra = function() {
-    console.log('DatosCompraCtrl.enviarOrdenCompra');
-
-    if ($rootScope.detalle === undefined) {
-      alert('El carro de compras se encuentra vacío.');
-      return;
-    };
-
+  $scope.initDatosCompra = function() {
     var posOptions = {timeout: 10000, enableHighAccuracy: false};
     $cordovaGeolocation.getCurrentPosition(posOptions)
       .then(function (position) {
-        var latitude = position.coords.latitude
-        var longitude = position.coords.longitude
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+
+        $scope.map = { center: { latitude: latitude, longitude: longitude }, zoom: 15 };
+        $scope.map['markers'] = [{
+          id:0,
+          latitude:latitude,
+          longitude:longitude,
+          icon:{url:"img/parkinggarage.png"},
+          options: {
+            draggable: true
+          }
+        }];
+      }, function(err) {
+        console.error('Error ::', err);
+      });
+  }
+
+
+  $scope.enviarOrdenCompra = function() {
+    console.log('DatosCompraCtrl.enviarOrdenCompra');
+
+    if ($rootScope.detalle === undefined || $rootScope.detalle.length === 0) {
+      alert('El carro de compras se encuentra vacío.');
+      return;
+    };
+    /*
+    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    $cordovaGeolocation.getCurrentPosition(posOptions)
+      .then(function (position) {
+    */
+
+    var markers = $scope.map.markers;
+    console.log('markers ::', markers);
+    var position = markers[0];
+
+        var latitude = position.latitude;
+        var longitude = position.longitude;
 
         $scope.datosCompra.location.coordinates = new Array();
         $scope.datosCompra.location.coordinates.push(longitude);
@@ -120,11 +157,11 @@ angular.module('starter.controllers', ['ngCordova'])
             $rootScope.detalle = new Array();
             $rootScope.totalCompra = 0;
           });
-        ;
-
+      /*
       }, function(err) {
-        // error
+        console.error("Error ::", err);
       });
+      */
 
   }
 
@@ -139,6 +176,16 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log('DatosCompraCtrl.regresar');
     $state.go('comprar');
   }
+
+  $scope.$evalAsync(function($scope) {
+    $scope.initDatosCompra();
+  })
+
+  // uiGmapGoogleMapApi is a promise.
+  // The "then" callback function provides the google.maps object.
+  uiGmapGoogleMapApi.then(function(maps) {
+
+  });
 
 })
 

@@ -24,6 +24,7 @@
 		background-position: right top;
 		background-repeat: no-repeat;
 	}
+  .angular-google-map-container { height: 400px; }
 </style>
 
 <div class="wrpp-rr" ng-controller="DatosCompraCtrl">
@@ -89,129 +90,21 @@
         		<div class="form-group">
 	        		<label class="control-label col-sm-3">Estado: </label>
 	        		<div class="col-sm-9">
-	        			<select class="form-control" name="estado" id="estado" ng-model="datosCompra.direccion.estado" required>
-							<option value="1">Aguascalientes</option>
-							<option value="2">Baja California</option>
-							<option value="3">Baja California Sur</option>
-							<option value="4">Campeche</option>
-							<option value="5">Chiapas</option>
-							<option value="6">Chihuahua</option>
-							<option value="7">Coahuila</option>
-							<option value="8">Colima</option>
-							<option value="9">Distrito Federal</option>
-							<option value="10">Durango</option>
-							<option value="11">Estado de México</option>
-							<option value="12">Guanajuato</option>
-							<option value="13">Guerrero</option>
-							<option value="14">Hidalgo</option>
-							<option value="15">Jalisco</option>
-							<option value="16">Michoacán</option>
-							<option value="17">Morelos</option>
-							<option value="18">Nayarit</option>
-							<option value="19">Nuevo León</option>
-							<option value="20">Oaxaca</option>
-							<option value="21">Puebla</option>
-							<option value="22">Querétaro</option>
-							<option value="23">Quintana Roo</option>
-							<option value="24">San Luis Potosí</option>
-							<option value="25">Sinaloa</option>
-							<option value="26">Sonora</option>
-							<option value="27">Tabasco</option>
-							<option value="28">Tamaulipas</option>
-							<option value="29">Tlaxcala</option>
-							<option value="30">Veracruz</option>
-							<option value="31">Yucatán</option>
-							<option value="32">Zacatecas</option>
-						</select>
+                <input class="form-control" type="text" size="25" name="estado" value="" ng-model="datosCompra.direccion.estado" required>
 	        		</div>
 	        	</div>
 
         		<div class="form-group">
 	        		<label class="control-label col-sm-3">Delegación o Municipio: </label>
 	        		<div class="col-sm-9">
-						<select class="form-control" name="municipios" id="municipios" ng-model="datosCompra.direccion.del_mun" required>
-							<option value="1">Abasolo</option>
-							<option value="2">Agualeguas</option>
-							<option value="3">Los Aldamas</option>
-							<option value="4">Allende</option>
-							<option value="5">Anahuac</option>
-							<option value="6">Apodaca</option>
-							<option value="7">Aramberri</option>
-							<option value="8">Bustamante</option>
-							<option value="9">Cadereyta Jimenez</option>
-							<option value="10">Carmen</option>
-							<option value="11">Cerralvo</option>
-							<option value="12">Cienega de Flores</option>
-							<option value="13">China</option>
-							<option value="14">Dr. Arroyo</option>
-							<option value="15">Dr. Coss</option>
-							<option value="16">Dr. Gonzalez</option>
-							<option value="17">Galeana</option>
-							<option value="18">Garcia</option>
-							<option value="19">San Pedro Garza Garcia</option>
-							<option value="20">Gral. Bravo</option>
-							<option value="21">Gral. Escobedo</option>
-							<option value="22">Gral. Teran</option>
-							<option value="23">Gral. Trevi</option>
-							<option value="24">Gral. Zaragoza</option>
-							<option value="25">Gral. Zuazua</option>
-							<option value="26">Guadalupe</option>
-							<option value="27">Los Herreras</option>
-							<option value="28">Higueras</option>
-							<option value="29">Hualahuises</option>
-							<option value="30">Iturbide</option>
-							<option value="31">Juarez</option>
-							<option value="32">Lampazos de Naranjo</option>
-							<option value="33">Linares</option>
-							<option value="34">Marin</option>
-							<option value="35">Melchor Ocampo</option>
-							<option value="36">Mier y Noriega</option>
-							<option value="37">Mina</option>
-							<option value="38">Montemorelos</option>
-							<option value="39">Monterrey</option>
-							<option value="40">Paras</option>
-							<option value="41">Pesqueria</option>
-							<option value="42">Los Ramones</option>
-							<option value="43">Rayones</option>
-							<option value="44">Sabinas Hidalgo</option>
-							<option value="45">Salinas Victoria</option>
-							<option value="46">San Nicolas de los Garza</option>
-							<option value="47">Hidalgo</option>
-							<option value="48">Santa Catarina</option>
-							<option value="49">Santiago</option>
-							<option value="50">Vallecillo</option>
-							<option value="51">Villaldama</option>
-						</select>
+                <input class="form-control" type="text" size="25" name="municipios" value="" ng-model="datosCompra.direccion.del_mun" required>
 	        		</div>
 	        	</div>
 
         		<div class="form-group">
-	        		<label class="control-label col-sm-3">País: </label>
-	        		<div class="col-sm-9">
-	        			<select class="form-control" name="cp" id="selEstado" ng-model="datosCompra.direccion.pais" required>
-	        				<option value="52">México</option>
-	        			</select>
-	        		</div>
-	        	</div>
-
-        		<div class="form-group">
-	        		<label class="control-label col-sm-3">Teléfono: </label>
+	        		<label class="control-label col-sm-3">Teléfono de Contacto: </label>
 	        		<div class="col-sm-9">
 	        			<input class="form-control" type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.tel" required>
-	        		</div>
-	        	</div>
-
-        		<div class="form-group">
-	        		<label class="control-label col-sm-3">Teléfono Móvil: </label>
-	        		<div class="col-sm-9">
-	        			<input class="form-control" type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.movil">
-	        		</div>
-	        	</div>
-
-        		<div class="form-group">
-	        		<label class="control-label col-sm-3">Nextel: </label>
-	        		<div class="col-sm-9">
-	        			<input class="form-control" type="tel" size="25" name="" value="" ng-model="datosCompra.contacto.nextel">
 	        		</div>
 	        	</div>
 
@@ -221,6 +114,15 @@
 	        			<input class="form-control" type="email" size="25" name="" value="" ng-model="datosCompra.contacto.email">
 	        		</div>
 	        	</div>
+
+            <div class="form-group">
+              <label class="control-label col-sm-12">Coloca el marcador en la dirección de entrega...</label>
+              <ion-content>
+                <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                  <ui-gmap-markers models="map.markers" coords="'self'" icon="'icon'" options="'options'"></ui-gmap-markers>
+                </ui-gmap-google-map>
+              </ion-content>
+            </div>
 
         		<div class="form-group">
         			<button class="btn btn-success form-control" ng-click="enviarOrdenCompra()">
