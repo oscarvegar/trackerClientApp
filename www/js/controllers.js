@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
+angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic', 'ui.bootstrap'])
 
 .config(function(uiGmapGoogleMapApiProvider) {
   uiGmapGoogleMapApiProvider.configure({
@@ -60,7 +60,9 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
 
 
 })
-.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state, uiGmapGoogleMapApi) {
+
+.controller('DatosCompraCtrl', function ($scope, $rootScope, $http, $cordovaGeolocation, $state, uiGmapGoogleMapApi,
+    $ionicModal, $window, $modal, $log) {
   var datosCompraInit = {
     nombre: '',
     ap_pat: '',
@@ -102,13 +104,31 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
           id:0,
           latitude:latitude,
           longitude:longitude,
-          icon:{url:"img/parkinggarage.png"},
+          icon:{url:"img/beer-marker.jpg"},
           options: {
             draggable: true
           }
         }];
       }, function(err) {
+<<<<<<< 1e742dd1ae53316a8e2b34dc33ad47cbe30b4da5
         console.error('Error ::', JSON.stringify(err));
+=======
+        console.error('Error ::', err);
+        // Default a Plaza de la Constitución, D. F.
+        var latitude = 19.4325179;
+        var longitude = -99.1332456;
+
+        $scope.map = { center: { latitude: latitude, longitude: longitude }, zoom: 15 };
+        $scope.map['markers'] = [{
+          id:0,
+          latitude:latitude,
+          longitude:longitude,
+          icon:{url:"img/beer-marker.jpg"},
+          options: {
+            draggable: true
+          }
+        }];
+>>>>>>> 16ea0c5d9c64cdb160988f045ae4e11932788ffb
       });
   }
 
@@ -117,15 +137,19 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
     console.log('DatosCompraCtrl.enviarOrdenCompra');
 
     if ($rootScope.detalle === undefined || $rootScope.detalle.length === 0) {
-      alert('El carro de compras se encuentra vacío.');
+      $scope.alerts = [
+        { type: 'danger', msg: 'El carro de compras se encuentra vacío.' }
+      ];
       return;
     };
+
+    $scope.open('mySendingReceivedModalContent.html', 'sm', 'Enviando ...', 'Se esta realizando el envio de tú orden', false);
+
     /*
     var posOptions = {timeout: 10000, enableHighAccuracy: false};
     $cordovaGeolocation.getCurrentPosition(posOptions)
       .then(function (position) {
     */
-
     var markers = $scope.map.markers;
     console.log('markers ::', markers);
     var position = markers[0];
@@ -146,6 +170,8 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
         $http.post(_HOST+'/api/orden/place', $scope.datosCompra)
           .success(function(response) {
             console.log('Response :: ', response);
+            // $modalInstance.close('okModal');
+            $scope.open('mySendingReceivedModalContent.html', 'sm', 'Orden Recibida', 'Tú orden ha sido enviada correctamente.', true);
             $scope.names = response.records;
             $scope.datosCompra = angular.copy(datosCompraInit);
             $rootScope.detalle = new Array();
@@ -177,6 +203,42 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
     $state.go('comprar');
   }
 
+  $scope.closeAlert = function(index) {
+    $scope.alerts.splice(index, 1);
+  };
+
+  $scope.animationsEnabled = true;
+
+  $scope.open = function (templateUrl, size, modalTitleText, modalDetailText, okButtonShow) {
+    $scope.modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: templateUrl,
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        modalTitleText: function () {
+          return modalTitleText;
+        },
+        modalDetailText: function () {
+          return modalDetailText
+        },
+        okButtonShow: function () {
+          return okButtonShow;
+        }
+      }
+    });
+
+    $scope.modalInstance.result.then(function (selectedItem) {
+      $log.info('selectedItem ::' + selectedItem);
+    }, function () {
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+  $scope.toggleAnimation = function () {
+    $scope.animationsEnabled = !$scope.animationsEnabled;
+  };
+
   $scope.$evalAsync(function($scope) {
     $scope.initDatosCompra();
   })
@@ -187,6 +249,21 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
 
   });
 
+})
+
+.controller('ModalInstanceCtrl', function ($scope, $modalInstance, modalTitleText, modalDetailText, okButtonShow) {
+
+  $scope.modalTitleText = modalTitleText;
+  $scope.modalDetailText = modalDetailText;
+  $scope.okButtonShow = okButtonShow;
+
+  $scope.okModal = function () {
+    $modalInstance.close('okModal');
+  };
+
+  $scope.cancelModal = function () {
+    $modalInstance.dismiss('cancel');
+  };
 })
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, $state, $rootScope) {
