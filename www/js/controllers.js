@@ -214,7 +214,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
   $scope.animationsEnabled = true;
 
   $scope.open = function (templateUrl, size, modalTitleText, modalDetailText, okButtonShow) {
-    $scope.modalInstance = $modal.open({
+    var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
       templateUrl: templateUrl,
       controller: 'ModalInstanceCtrl',
@@ -232,7 +232,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
       }
     });
 
-    $scope.modalInstance.result.then(function (selectedItem) {
+    modalInstance.result.then(function (selectedItem) {
       $log.info('selectedItem ::' + selectedItem);
       $scope.regresarHomeProducts();
     }, function () {
