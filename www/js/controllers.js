@@ -110,10 +110,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
           }
         }];
       }, function(err) {
-<<<<<<< 1e742dd1ae53316a8e2b34dc33ad47cbe30b4da5
         console.error('Error ::', JSON.stringify(err));
-=======
-        console.error('Error ::', err);
         // Default a Plaza de la Constitución, D. F.
         var latitude = 19.4325179;
         var longitude = -99.1332456;
@@ -128,7 +125,6 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
             draggable: true
           }
         }];
->>>>>>> 16ea0c5d9c64cdb160988f045ae4e11932788ffb
       });
   }
 
