@@ -51,11 +51,11 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
 
   $scope.productosArray = [];
 
-  $http.get('http://yoplanner.com:1337/api/productos/all').success(function(data){
+  $http.get(_HOST+'/api/productos/all').success(function(data){
     $scope.productosArray = data;
   })
   .error(function(data, status, headers, config){
-    console.log("Error: " +status);
+    console.log("Error: ",JSON.stringify(status));
   });
 
 
@@ -91,7 +91,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
   $scope.datosCompra = angular.copy(datosCompraInit);
 
   $scope.initDatosCompra = function() {
-    var posOptions = {timeout: 10000, enableHighAccuracy: false};
+    var posOptions = {timeout: 10000, enableHighAccuracy: true};
     $cordovaGeolocation.getCurrentPosition(posOptions)
       .then(function (position) {
         var latitude = position.coords.latitude;
@@ -108,7 +108,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
           }
         }];
       }, function(err) {
-        console.error('Error ::', err);
+        console.error('Error ::', JSON.stringify(err));
       });
   }
 
@@ -143,7 +143,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
         console.log('DatosCompra :: ', $scope.datosCompra);
 
         // $http.post('http://192.168.1.72:1337/api/orden/place', $scope.datosCompra)
-        $http.post('http://yoplanner.com:1337/api/orden/place', $scope.datosCompra)
+        $http.post(_HOST+'/api/orden/place', $scope.datosCompra)
           .success(function(response) {
             console.log('Response :: ', response);
             $scope.names = response.records;
@@ -152,7 +152,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps'])
             $rootScope.totalCompra = 0;
           })
           .error(function(error) {
-            console.log('ERROR ::', error);
+            console.log('ERROR ::', JSON.stringify(error));
             $scope.datosCompra = angular.copy(datosCompraInit);
             $rootScope.detalle = new Array();
             $rootScope.totalCompra = 0;
