@@ -187,6 +187,13 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
 
   }
 
+  $scope.regresarHomeProducts = function() {
+    console.log('DatosCompraCtrl.regresarHomeProducts');
+    $rootScope.detalle = new Array();
+    $rootScope.totalCompra = 0;
+    $state.go('productos');
+  }
+
   $scope.cancelarOrden = function() {
     console.log('DatosCompraCtrl.cancelarOrden');
     $rootScope.detalle = new Array();
@@ -226,6 +233,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
 
     $scope.modalInstance.result.then(function (selectedItem) {
       $log.info('selectedItem ::' + selectedItem);
+      $scope.regresarHomeProducts();
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
@@ -247,7 +255,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
 
 })
 
-.controller('ModalInstanceCtrl', function ($scope, $modalInstance, modalTitleText, modalDetailText, okButtonShow) {
+.controller('ModalInstanceCtrl', function ($scope, $state, $modalInstance, modalTitleText, modalDetailText, okButtonShow) {
 
   $scope.modalTitleText = modalTitleText;
   $scope.modalDetailText = modalDetailText;
