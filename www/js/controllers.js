@@ -139,7 +139,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
       return;
     };
 
-    $scope.open('mySendingReceivedModalContent.html', 'sm', 'Enviando ...', 'Se esta realizando el envio de tú orden', false);
+    var modalEnviando = $scope.open('mySendingReceivedModalContent.html', 'sm', 'Enviando ...', 'Se esta realizando el envio de tú orden', false);
 
     /*
     var posOptions = {timeout: 10000, enableHighAccuracy: false};
@@ -167,6 +167,7 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
           .success(function(response) {
             console.log('Response :: ', response);
             // $modalInstance.close('okModal');
+            $scope.modalInstance.dismiss('cancel');
             $scope.open('mySendingReceivedModalContent.html', 'sm', 'Orden Recibida', 'Tú orden ha sido enviada correctamente.', true);
             $scope.names = response.records;
             $scope.datosCompra = angular.copy(datosCompraInit);
@@ -237,6 +238,8 @@ angular.module('starter.controllers', ['ngCordova', 'uiGmapgoogle-maps', 'ionic'
     }, function () {
       $log.info('Modal dismissed at: ' + new Date());
     });
+
+      return $scope.modalInstance;
   };
 
   $scope.toggleAnimation = function () {
